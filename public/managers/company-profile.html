@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="/public/assets/js/jquery.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AskAway - Company Profile</title>
+    <meta name="description" content="A BETTER INTERVIEW" />
+    <link rel="shortcut icon" href="/public/assets/img/Favicon.png" type="image/x-icon">
+
+    <link href="/public/managers/assets/company-profile/content/css/bootstrap.css" rel="Stylesheet" type="text/css" />
+    <link href="/public/managers/assets/company-profile/content/css/animation.css" rel="Stylesheet" type="text/css" />
+    <link href="/public/managers/assets/company-profile/content/css/customeStyle.css" rel="Stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="/public/assets/css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+
+<body style="display: none;">
+    <div class="wrapper">
+        <div id="header"> </div>
+        <section class="dbContent">
+            <div class="container divPosition company_profile">
+                <div class="row" id="companyInformation">
+                    <div class="col">
+                        <div id="accordion" class="accordion">
+                            <div class="card-header">
+                                <a class="card-title">
+                                    <h1 class="float-left title-font" id="title-Name">Company Information </h1>
+                                </a>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div id="collapseOne" class=" collapse show">
+                                <div id="company-information" class="card-wrap">
+                                    <div class="section-company-div">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="txtFirstName"
+                                                        placeholder="Firstname">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="txtLastName"
+                                                        placeholder="Lastname">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="txtEmail"
+                                                        placeholder="Company Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control companyName"
+                                                        id="txtCompanyName" placeholder="Company Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="txtCompanyAddress"
+                                                        placeholder="Company Address">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="txtCompanyAddress2"
+                                                        placeholder="Company Address 2">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="txtCity"
+                                                        placeholder="Company City">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="txtState">
+                                                        <option selected> -- Select State -- </option>
+                                                        <option value="AP">Andhra Pradesh</option>
+                                                        <option value="AP">Arunachal Pradesh</option>
+                                                        <option value="AS">Assam</option>
+                                                        <option value="BH">Bihar</option>
+                                                        <option value="CG">Chhattisgarh</option>
+                                                        <option value="GO">Goa</option>
+                                                        <option value="GJ">Gujarat</option>
+                                                        <option value="HR">Haryana</option>
+                                                        <option value="HP">Himachal Pradesh </option>
+                                                        <option value="JK">Jammu and Kashmir</option>
+                                                        <option value="JH">Jharkhand</option>
+                                                        <option value="KT">Karnataka</option>
+                                                        <option value="KR">Kerala</option>
+                                                        <option value="MP">Madya Pradesh</option>
+                                                        <option value="MH">Maharashtra</option>
+                                                        <option value="MN">Manipur</option>
+                                                        <option value="MG">Meghalaya</option>
+                                                        <option value="MZ">Mizoram</option>
+                                                        <option value="NL">Nagaland</option>
+                                                        <option value="OR">Orissa</option>
+                                                        <option value="PJ">Punjab</option>
+                                                        <option value="RJ">Rajasthan</option>
+                                                        <option value="SI">Sikkim</option>
+                                                        <option value="TN">Tamil Nadu</option>
+                                                        <option value="TG">Telagana</option>
+                                                        <option value="MO">Missouri</option>
+                                                        <option value="TP">Tripura</option>
+                                                        <option value="UT">Uttaranchal</option>
+                                                        <option value="UP">Uttar Pradesh</option>
+                                                        <option value="WB">West Bengal</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <input type="number" class="form-control" id="txtZip"
+                                                        placeholder="Company Zip">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" id="updateButton">
+                                            <div class="col-12 text-center">
+                                                <button type="submit" id="updateCompany" class="btn btn-pink">Update
+                                                    Company</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="divDepartment" class="card-wrap">
+                                    <div class="section-div">
+                                        <h3 class="title-font">DEPARTMENTS</h3>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="table-responsive with-action">
+                                                    <table class="table table-hover table-striped paymentTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Name</th>
+                                                                <th style="padding-left: 30px;"> COST
+                                                                    CENTER
+                                                                </th>
+                                                                <th style="padding-left: 30px;"> ACTION
+
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tblDepartments">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-pink mb-4 mt-2"
+                                                    id="addDepartment">Add
+                                                    Department</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="manager-information" class="card-wrap">
+                                    <div class="section-div">
+                                        <h3 class="title-font">MANAGER</h3>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="table-responsive with-action">
+                                                    <table class="table table-hover table-striped paymentTable"
+                                                        id="manager">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Name </th>
+                                                                <th> Email </th>
+                                                                <th> Status </th>
+                                                                <th>Date</th>
+                                                                <th id="managerIsDeleted"> Deleted
+                                                                </th>
+                                                                <th id="managerAction"> Action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tblmanagers">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-12" id="managerDefaultQuestion">
+                                                <button type="submit" class="btn btn-pink mb-4 mt-2"
+                                                    onclick="viewManagerQuestionModal()">Default
+                                                    Question</button>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="addManagerHide" style="display: none;">
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-pink mb-4 mt-2" id="addManager">Add
+                                                    Manager</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="section-div">
+                                        <h3 class="title-font">JOB TITLES</h3>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="table-responsive with-action">
+                                                    <table class="table table-hover table-striped paymentTable"
+                                                        id="job-titles">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> NAME</th>
+                                                                <th style="padding-left: 30px;">
+                                                                    DEPARTMENT
+                                                                </th>
+                                                                <th style="padding-left: 30px;"> ACTION
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tblJobTitle">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-pink mb-4 mt-2"
+                                                    id="addJobDetail">Add
+                                                    Job</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <div id="footer"></div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="departmentModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header primaryHeader company_profile">
+                    <h1 class="modal-title" id="departmentQuestionTitle" style="text-transform: capitalize;"></h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="departmentInputs" class="row">
+                        <div class="form-group newStyle col-lg-6 col-md-12">
+                            <h6 class="cap">Department</h6>
+                            <input type="text" class="form-control formInputs " id="txtDepartmentName"
+                                placeholder="Name">
+                        </div>
+                        <div class="form-group newStyle col-lg-6 col-md-12">
+                            <h6 class="cap">Cost Center</h6>
+                            <input type="text" class="form-control formInputs " id="txtDepartmentCostCenter"
+                                placeholder="Cost Center">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive with-action">
+                                <table style="width:100%;" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="cap" style="width:40%"> Default Questions for
+                                                Department</th>
+                                            <th style="width:7%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblViewQuestionDepartment">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="noStyle mt-3">
+                                <div class="innerQForm">
+                                    <div class="form-group row">
+                                        <div class="form-group sizeing col-md-12 custom-dd">
+                                            <input type="text" Re class="form-control formInputs"
+                                                id="txtQuestionDepartment" placeholder="New Question">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-pink "
+                                                id="saveQuestionDepartment">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel float-left" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-pink " id="saveDepartment">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="JobDetailModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header primaryHeader company_profile">
+                    <h1 class="modal-title" id="jobQuestionTitle" style="text-transform: capitalize;"></h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="departmentInputs " class="row">
+                        <div class="form-group newStyle col-lg-6 col-md-12">
+                            <h6 class="cap">Job Title</h6>
+                            <input type="text" class="form-control formInputs" id="txtJobTitle" placeholder="Job Title">
+                        </div>
+                        <div class="form-group newStyle col-lg-6 col-md-12">
+                            <h6 class="cap">Department</h6>
+                            <select id="txtJobDepartment" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="noStyle">
+                        <div class="table-responsive with-action">
+                            <table style="width:100%;" id="table">
+                                <thead>
+                                    <tr>
+                                        <th class="cap" style="width:40%"> Default Questions for Job
+                                            Title</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblViewQuestionJob">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="noStyle">
+                            <div class="mt-3">
+                                <div class="innerQForm">
+                                    <div class="form-group row">
+                                        <div class="form-group sizeing col-md-12 custom-dd">
+                                            <input type="text" class="form-control formInputs" id="txtQuestionJob"
+                                                placeholder="New Question">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-pink "
+                                                id="saveQuestionJob">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-pink " id="saveJobDetail">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="ManagerDetailModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header primaryHeader company_profile">
+                    <h1 class="modal-title" id="ManagerQuestionTitle" style="text-transform: capitalize;"></h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group newStyle">
+                        <h6 class="cap">Name</h6>
+                        <input type="text" class="form-control formInputs" id="txtManagerName" placeholder="Name"
+                            disabled>
+                    </div>
+                    <div class="form-group newStyle">
+                        <h6 class="cap">Email</h6>
+                        <input type="text" class="form-control formInputs" id="txtManagerEmail" placeholder="Email"
+                            disabled>
+                    </div>
+                    <div class="noStyle divManagerQuestion">
+                        <div class="ansCard" id="view-question-table-manager">
+                            <table style="width:100%;" id="table">
+                                <thead>
+                                    <tr>
+                                        <th class="cap" style="width:40%"> Default Questions for
+                                            Manager</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblViewQuestionManager">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="noStyle">
+                            <div class="card-body">
+                                <div class="innerQForm">
+                                    <div class="form-group">
+                                        <div class="form-group sizeing custom-dd">
+                                            <input type="text" class="form-control formInputs" id="txtQuestionManager"
+                                                placeholder="New Question">
+                                        </div>
+                                        <button type="button" class="btn btn-pink "
+                                            id="saveQuestionManager">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="managerModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header primaryHeader company_profile">
+                    <h1 class="modal-title" id="managerTitle" style="text-transform: capitalize;">Default Questions for
+                        Manager</h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group newStyle col-md-4">
+                            <h6 class="cap">First name</h6>
+                            <input type="text" class="form-control formInputs" id="txtManagerFirstname"
+                                placeholder="Enter Firstname">
+                        </div>
+                        <div class="form-group newStyle col-md-4">
+                            <h6 class="cap">Last name</h6>
+                            <input type="text" class="form-control formInputs" id="txtManagerLastname"
+                                placeholder="Enter Lastname">
+                        </div>
+                        <div class="form-group newStyle col-md-4">
+                            <h6 class="cap">Email</h6>
+                            <input type="text" class="form-control formInputs" id="txtManagerEmails"
+                                placeholder="Enter Email">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive with-action">
+                                <table style="width:100%;" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="cap" style="width:40%"> Default Questions for Manager
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblViewQuestion">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="noStyle">
+                                <div class="mt-3">
+                                    <div class="innerQForm">
+                                        <div class="form-group row">
+                                            <div class="form-group sizeing col-md-12  custom-dd">
+                                                <input type="text" class="form-control formInputs"
+                                                    id="txtManagerQuestion" placeholder="New Question">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="button" class="btn btn-pink "
+                                                    id="saveManagerQuestion">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-pink " id="saveManager">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/assets/js/bootstrap.min.js"></script>
+    <script src="/public/assets/js/notify.min.js"></script>
+    <script src="/public/assets/js/jquery-confirm.min.js"></script>
+    <script src="/public/assets/js/bootstrap-select.min.js"></script>
+    <script src="/public/assets/js/jquery.mask.min.js"></script>
+    <script src="/public/assets/js/utility.js"></script>
+    <script src="/public/assets/js/login.js"></script>
+</body>
+<div class="notifyjs-corner" style="top: 0px; right: 0px;">
+
+    <script>
+        let allmanagers = [];
+        let managerQuestion = [];
+        let jobs = {};
+        let department = {};
+        $(document).ready(function () {
+            let managerToken = localStorage.getItem('m_token');
+            let adminKey = localStorage.getItem('adminKey');
+            if (!adminKey && !managerToken) {
+                window.location.href = '/login';
+            }
+
+            const role = localStorage.getItem('type');
+            if (role === 'manager') {
+                $('#company-information').hide()
+                $('#title-Name').html('DEPARTMENTS')
+                $('#divDepartment > span').remove();
+                $('#divDepartment > h1').remove();
+            }
+            else {
+                $('#addManagerHide').show();
+            }
+            $('body').show();
+            getCompanyDetail()
+            $('#header').load('../public/views/header.html');
+            $('#footer').load('../public/views/footer.html');
+            $.ajax({
+                url: '/get-company',
+                headers: setAuthenticationHeader(),
+                "success": function (result) {
+                    if (result) {
+                        $('#txtFirstName').val(result.admin.firstname)
+                        $('#txtLastName').val(result.admin.lastname)
+                        $('#txtCompanyName').val(result.admin.company_name)
+                        $('#txtEmail').val(result.admin.email)
+                        $('#txtCompanyAddress').val(result.admin.address)
+                        $('#txtCompanyAddress2').val(result.admin.address2)
+                        $('#txtCity').val(result.admin.city)
+                        if (result.admin.state) {
+                            $('#txtState').val(result.admin.state)
+                        }
+                        $('#txtZip').val(result.admin.zip)
+                    }
+                }
+            })
+            $('#departmentModal').modal('hide');
+            $('#addDepartment').click(function () {
+                localStorage.setItem('departmentId', '');
+                department = { name: '', costCenter: '', questions: [] };
+                bindDepartmentQuestion();
+                $('#departmentQuestionTitle').html('Add Department');
+                $('#departmentModal').modal('show');
+            });
+            $('#saveDepartment').click(function (event) {
+                $('#managerModal').modal('hide');
+                department.name = $('#txtDepartmentName').val();
+                department.costCenter = $('#txtDepartmentCostCenter').val();
+                if (!department.name || !department.costCenter) {
+                    return $.notify("Please Fill All manager Fields.", { type: 'danger' })
+                }
+                const departmentId = localStorage.getItem('departmentId');
+                $('#saveQuestionDepartment').trigger('click', [false]);
+                const data = {
+                    name: department.name,
+                    costCenter: department.costCenter,
+                    questions: department.questions
+                }
+                if (!departmentId) {
+                    insertOrUpdate('/save-department', data, successDepartment);
+                }
+                else {
+                    insertOrUpdate(`/update-department/${departmentId}`, data, successDepartment);
+                }
+            })
+            $('#saveQuestionDepartment').click((e, isSave) => {
+                if (!$('#txtQuestionDepartment').val()) {
+                    if (isSave !== false) {
+                        $.notify('Please enter a default question');
+                    }
+                    return;
+                }
+                department.name = $('#txtDepartmentName').val();
+                department.costCenter = $('#txtDepartmentCostCenter').val();
+
+                if (!department.questions) {
+                    department.questions = [];
+                }
+                department.questions.push({
+                    'question': $('#txtQuestionDepartment').val(),
+                });
+                $('#txtQuestionDepartment').val('');
+                bindDepartmentQuestion();
+            });
+            function bindDepartmentQuestion() {
+                if (department) {
+                    $('#txtDepartmentName').val(department.name);
+                    $('#txtDepartmentCostCenter').val(department.costCenter);
+                }
+                $('#txtQuestionDepartment').val('');
+                if (department && department.questions && department.questions.length > 0) {
+                    $('#tblViewQuestionDepartment').html('');
+                    var html = '';
+                    for (let index = 0; index < department.questions.length; index++) {
+                        const question = department.questions[index];
+                        html += '<tr>';
+                        html += '<td class="questionTd">' + question.question + '</td>';
+                        html += "<td style='width:50%; float: left;' class='remove' title='Delete Question' onClick=deleteDepartmentQuestion(\"" + index + '")>x</td>';
+                        html += '</tr>';
+                    }
+                    $('#tblViewQuestionDepartment').append(html);
+                } else {
+                    $('#tblViewQuestionDepartment').html('');
+                }
+            }
+            deleteQuestion = function (id, type, questionId) {
+                const url = `/remove-department-question/${id}/${questionId}`;
+                const message = "you want to sure remove data?";
+                postData(url, viewManagerQuestionModal, message, "delete", 'GET', id)
+            }
+            deleteDepartmentQuestion = function (index) {
+                department.questions.splice(index, 1);
+                bindDepartmentQuestion();
+            }
+            bindDepartment = function (result) {
+                if (result.status) {
+                    if (result.result.length > 0) {
+                        const managerToken = localStorage.getItem('m_token');
+
+                        const isAccess = localStorage.getItem('adminKey') && localStorage.getItem('type') === 'admin' ? true : false;
+
+                        let html = '';
+                        for (let index = 0; index < result.result.length; index++) {
+                            const department = result.result[index];
+                            html += '<tr>';
+                            html += '<td>' + department.name + '</td>';
+                            html += '<td style="padding-left: 30px;">' + department.cost_center + '</td>';
+                            html += '<td style="padding-left: 30px;">';
+                            if (isAccess || department.manager_token === managerToken) {
+                                html += '<button type="button" title="Default Question" class="btn btn-success" onclick="editDepartment(\'' + department.name + "', '" + department.departmentId + "', '" + department.cost_center + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                html += '<button type="button" title="Delete Department" class="btn btn-danger" onclick="deleteDepartment(\'' + department.departmentId + "', '" + result.result[0].manager_token + '\')"><i class="fa fa-trash"></i></button>&nbsp;';
+                            } else {
+                                html += '<button disabled type="button" title="Default Question" class="btn btn-success" onclick="editDepartment(\'' + department.name + "', '" + department.departmentId + "', '" + department.cost_center + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                html += '<button disabled type="button" title="Delete Department" class="btn btn-danger" onclick="deleteDepartment(\'' + department.departmentId + "', '" + result.result[0].manager_token + '\')"><i class="fa fa-trash"></i></button>&nbsp;';
+                            }
+                            html += '</td>';
+                            html += '</tr>';
+                        }
+                        $('#tblDepartments').html(html);
+                        $('#txtJobDepartment').empty();
+                        $('#txtJobDepartment').append($('<option>').text('-- Select Department --'));
+                        $.each(result.result, function (index, value) {
+                            $('#txtJobDepartment').append($('<option>').text(value.name).attr('value', value.name));
+                        });
+                    } else {
+
+                        let html = '';
+                        html += '<tr>';
+                        html += '<td colspan="3" style="COLOR: red;"> * Profile incomplete.  Please add a Department </td>';
+                        html += '</tr>';
+                        $('#tblDepartments').html(html);
+                        $('#txtJobDepartment').empty();
+                    }
+                } else {
+                    let html = '';
+                    html += '<tr>';
+                    html += '<td colspan="3" style="COLOR: red;"> * Profile incomplete.  Please add a Department </td>';
+                    html += '</tr>';
+                    $('#tblDepartments').html(html);
+                    $('#txtJobDepartment').empty();
+                }
+            }
+            deleteDepartment = function (departmentId) {
+                postData(`/delete-department/${departmentId}`, getDepartment, 'Are you sure you want to delete the department record?', 'Delete');
+            }
+            editDepartment = function (name, departmentId, costCenter) {
+                localStorage.setItem('departmentId', departmentId);
+                department = { name: name, costCenter: costCenter, questions: [] };
+                viewDepartmentQuestionModal(departmentId);
+                $('#departmentQuestionTitle').html('Edit Department');
+                $('#departmentModal').modal('show');
+            }
+            viewDepartmentQuestionModal = function (id) {
+                $.ajax({
+                    type: 'GET',
+                    url: `/view-department-question/${id}`,
+                    headers: setAuthenticationHeader(),
+                    success: function (result) {
+                        if (result.status) {
+                            department.questions = result.data.length > 0 ? result.data[0].questions : [];
+                            bindDepartmentQuestion();
+                        } else {
+                            $.notify(result.message);
+                        }
+                    },
+                });
+            }
+            function successDepartment() {
+                $('#departmentModal').modal('hide');
+                getDepartment();
+            }
+            function getDepartment() {
+                getAllData('/get-department', bindDepartment, 'GET');
+            }
+            $('#txtQuestionDepartment').on('keypress', function (e) {
+                if (e.keyCode === 13) {
+                    $('#saveQuestionDepartment').click()
+                }
+            })
+            function getCompanyDetail() {
+                if (localStorage.getItem('type') === 'admin') {
+                    $('#managerDefaultQuestion').hide();
+                } else {
+                    $('#managerAction').remove();
+                    $('#managerIsDeleted').remove();
+                }
+                $.ajax({
+                    type: 'GET',
+                    url: '/get-company-detail',
+                    headers: setAuthenticationHeader(),
+                    "contentType": "application/json",
+                    success: function (result) {
+                        bindDepartment(result.data.departmentResult);
+                        bindManager(result.data.managerResult);
+                        bindJobDetail(result.data.jobDetailResult);
+                    },
+                });
+            }
+            $('#addJobDetail').click(function () {
+                $('#JobDetailModal').modal('show');
+            })
+            $('#addJobDetail').click(function () {
+                localStorage.setItem('jobDetailId', '');
+                jobs = { title: '', department: '', questions: [] };
+                bindJobQuestion();
+                $('#jobQuestionTitle').html('Add Job');
+                $('#JobDetailModal').modal('show');
+            });
+            $('#saveJobDetail').click(function (event) {
+                const jobtitle = $('#txtJobTitle').val();
+                const department = $('#txtJobDepartment').val();
+                if (!jobtitle) {
+                    return $.notify("Please Fill All  Fields.", { type: 'danger' })
+                }
+                else {
+                    jobs.title = $('#txtJobTitle').val()
+                    jobs.department = $('#txtJobDepartment').val()
+                    $('#saveQuestionJob').trigger('click', [false])
+                    bindJobQuestion()
+                    const data = {
+                        'title': jobs.title,
+                        "department": department,
+                        'questions': jobs.questions
+                    }
+                    let url;
+                    const jobDetailId = localStorage.getItem('jobDetailId')
+                    if (!jobDetailId) {
+                        url = '/save-job-detail'
+                    }
+                    else {
+                        url = `/update-job-detail/${jobDetailId}`
+                    }
+                    event.preventDefault();
+                    var settings = {
+                        "url": url,
+                        "method": "POST",
+                        "headers": setAuthenticationHeader(),
+                        "contentType": "application/json",
+                        "data": JSON.stringify(data),
+                        "success": function (result) {
+                            if (result.data) {
+                                setTimeout(() => { $.notify(result.message, 'success') }, 500)
+                                successJob()
+                                $('#JobDetailModal').modal('hide');
+                            } else {
+                                setTimeout(() => { $.notify(result.message) }, 500)
+                            }
+                        }
+                    };
+                    $.ajax(settings).done(function (response) {
+                    });
+                }
+            })
+            $('#saveQuestionJob').click(function (e, isSave) {
+                if (!$('#txtQuestionJob').val()) {
+                    if (isSave !== false) $.notify('Please enter a default question');
+                    return;
+                }
+                jobs.title = $('#txtJobTitle').val();
+                jobs.department = $('#txtJobDepartment').val();
+                if (!jobs.questions) {
+                    jobs.questions = [];
+                }
+                jobs.questions.push({
+                    'question': $('#txtQuestionJob').val(),
+                });
+                $('#txtQuestionJob').val('');
+                bindJobQuestion();
+            });
+            bindJobQuestion = function () {
+                if (jobs) {
+                    $('#txtJobTitle').val(jobs.title);
+                }
+                $('#txtQuestionJob').val('');
+                if (jobs && jobs.questions && jobs.questions.length > 0) {
+                    $('#tblViewQuestionJob').html('');
+                    var html = '';
+                    for (let index = 0; index < jobs.questions.length; index++) {
+                        const question = jobs.questions[index];
+                        html += '<tr>';
+                        html += '<td class="questionTd">' + question.question + '</td>';
+                        html += "<td style='width:20%; float: left;' class='remove' title='Delete Question' onClick=deleteJobQuestion(\"" + index + '")>x</td>';
+                        html += '</tr>';
+                    }
+                    $('#tblViewQuestionJob').append(html);
+                } else {
+                    $('#tblViewQuestionJob').html('');
+                }
+            }
+            deleteJobQuestion = function (index) {
+                jobs.questions.splice(index, 1);
+                bindJobQuestion();
+            }
+            $('#txtQuestionJob').on('keypress', function (e) {
+                if (e.keyCode === 13) {
+                    $('#saveQuestionJob').click();
+                }
+            })
+            function successJob() {
+                $('#JobDetailModal').modal('hide')
+                getJobDetail()
+            }
+            function getJobDetail() {
+                getAllData('/get-job-detail', bindJobDetail, 'GET');
+            }
+            bindJobDetail = function (result) {
+                const managerToken = localStorage.getItem('m_token')
+                const isAccess = localStorage.getItem('adminKey') && localStorage.getItem('type') === 'admin' ? true : false;
+                if (result.status) {
+                    if (result.result.length > 0) {
+                        let html = '';
+                        for (let index = 0; index < result.result.length; index++) {
+                            const jobTitle = result.result[index];
+                            html += '<tr>';
+                            html += '<td>' + jobTitle.title + '</td>';
+                            html += '<td  style="padding-left: 30px;">' + jobTitle.department + '</td>';
+                            html += '<td style="padding-left: 30px;">';
+                            if (isAccess || jobTitle.manager_token === managerToken) {
+                                html += '<button type="button" title="Default Question" class="btn btn-success"  onclick="editJobDetail(\'' + jobTitle.title + "', '" + jobTitle.job_detail_id + "','" +
+                                    jobTitle.department + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                html += '<button type="button" title="Delete Job" class="btn btn-danger" onclick="deleteJobDetail(\'' + jobTitle.job_detail_id + '\')"><i class="fa fa-trash"></i></button>&nbsp;';
+                            } else {
+                                html += '<button disabled type="button" title="Default Question" class="btn btn-success"  onclick="editJobDetail(\'' + jobTitle.title + "', '" + jobTitle.job_detail_id + "','" + jobTitle.department + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                html += '<button disabled type="button" title="Delete Job" class="btn btn-danger"  onclick="deleteJobDetail(\'' + jobTitle.job_detail_id + '\')"><i class="fa fa-trash"></i></button>&nbsp;';
+                            }
+                            html += '</td>';
+                            html += '</tr>';
+                        }
+                        $('#tblJobTitle').html(html);
+                    }
+                } else {
+                    let html = '';
+                    html += '<tr>';
+                    html += '<td colspan="3" style="COLOR: red;"> * Profile incomplete.  Please add a Job Title </td>';
+                    html += '</tr>';
+                    $('#tblJobTitle').html(html);
+                }
+            }
+            deleteJobDetail = function (jobDetailId) {
+                postData(`/delete-job-detail/${jobDetailId}`, getJobDetail, 'You want to sure delete data?', 'Delete');
+            }
+            editJobDetail = function (name, jobDetailId, department) {
+                localStorage.setItem('jobDetailId', jobDetailId)
+                jobs = { title: name, department: department, questions: [] };
+                viewJobQuestionModal(jobDetailId)
+                $('#jobQuestionTitle').html('Edit Job')
+                $('#JobDetailModal').modal('show');
+            }
+            viewJobQuestionModal = function (id) {
+                $.ajax({
+                    type: 'GET',
+                    url: `/view-job-question/${id}`,
+                    headers: setAuthenticationHeader(),
+                    success: function (result) {
+                        if (result.status) {
+
+                            jobs.questions = result.data.length > 0 ? result.data[0].
+                                questions : [];
+                            bindJobQuestion()
+                        } else {
+                            $.notify(result.message);
+                        }
+                    }
+                })
+            }
+            $('#managerModal').modal('hide');
+            $('#txtManagerQuestion').on('keypress', function (e) {
+                if (e.keyCode === 13) {
+                    $('#saveManagerQuestion').click()
+                }
+            })
+            $('#saveManagerQuestion').click(function () {
+                if (!$('#txtManagerQuestion').val()) {
+                    $.notify('Please enter a default question');
+                    return;
+                }
+                managerQuestion.push({
+                    'question': $('#txtManagerQuestion').val(),
+                });
+                $('#txtManagerQuestion').val('');
+                bindManagerQuestion();
+            });
+            function bindManagerQuestion() {
+                if (managerQuestion && managerQuestion.length > 0) {
+                    $('#tblViewQuestion').html('');
+                    var html = '';
+                    for (let index = 0; index < managerQuestion.length; index++) {
+                        const question = managerQuestion[index];
+                        html += '<tr>';
+                        html += '<td class="questionTd">' + question.question + '</td>';
+                        html += "<td style='width:20%; float: left;' class='remove' title='Delete Question' onClick=deleteManagerQuestion(\"" + index + '")>x</td>';
+                        html += '</tr>';
+                    }
+                    $('#tblViewQuestion').append(html);
+                } else {
+                    $('#tblViewQuestion').html('');
+                }
+            }
+            viewManagerQuestionModal = function (managerToken) {
+                const token = role === 'admin' ? managerToken : localStorage.getItem('m_token');
+                if (allmanagers.length > 0) {
+                    const manager = allmanagers.filter(x => x.manager_token === token);
+                    if (manager.length > 0) {
+                        $('#txtManagerName').val(`${manager[0].firstname} ${manager[0].lastname}`);
+                        $('#txtManagerEmail').val(manager[0].email);
+                    }
+                }
+                $('#ManagerQuestionTitle').html('Manager question');
+                $('#txtQuestionManager').val('');
+                $('#txtTimeManager').val('');
+                $('#view-question-table-manager').hide();
+                $('#tblViewQuestionManager').html('');
+                localStorage.setItem('idForQuestion', token);
+                $.ajax({
+                    type: 'GET',
+                    url: `/view-manager-question/${token}`,
+                    headers: setAuthenticationHeader(),
+                    success: function (result) {
+                        if (result.status) {
+                            if (result.data.length > 0) {
+                                const questions = result.data;
+                                if (questions && questions.length > 0) {
+                                    var html = '';
+                                    for (let index = 0; index < questions.length; index++) {
+                                        const question = questions[index];
+                                        html += '<tr>';
+                                        html += '<td class="questionTd">' + question.question + '</td>';
+                                        html += '<td style="width:50%; float: left;" class="remove" title="Delete Question" onclick="deleteQuestion(\'' + token + "', 'manager', '" + question.id + '\')">x</td>';
+                                        html += '</tr>';
+                                    }
+                                    $('#view-question-table-manager').show();
+                                    $('#tblViewQuestionManager').append(html);
+                                }
+                            }
+                            $('#ManagerDetailModal').modal('show');
+                        } else {
+                            $.notify(result.message);
+                        }
+                    },
+                });
+            }
+            deleteManagerQuestion = function (index) {
+                managerQuestion.splice(index, 1);
+                bindManagerQuestion();
+            }
+            $('#addManager').click(function () {
+                if (!$('#txtCompanyName').val()) {
+                    $.notify('Please enter Company Name');
+                    return;
+                }
+                $('#txtManagerFirstname').val('');
+                $('#txtManagerLastname').val('');
+                $('#txtManagerEmails').val('');
+                bindManagerQuestion();
+                $('#managerModal').modal('show');
+            });
+            $('#saveManager').click(function (event) {
+                const firstname = $('#txtManagerFirstname').val();
+                const lastname = $('#txtManagerLastname').val();
+                const email = $('#txtManagerEmails').val();
+                const pattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                if (!firstname || !lastname || !email) {
+                    return $.notify("Please Fill All manager Fields.", { type: 'danger' })
+                } else if (!pattern.test(email)) {
+                    return $.notify("Please enter valid email", { type: 'danger' })
+                }
+                if ($('#txtManagerQuestion').val()) {
+                    managerQuestion.push({
+                        'question': $('#txtManagerQuestion').val(),
+                    });
+                    $('#txtManagerQuestion').val('');
+                    bindManagerQuestion();
+                }
+                const data = {
+                    'firstname': firstname,
+                    'lastname': lastname,
+                    'email': email,
+                    'question': managerQuestion,
+                    'isDeleted': false,
+                }
+                event.preventDefault();
+                var settings = {
+                    "url": "/save-manager",
+                    "method": "POST",
+                    "headers": setAuthenticationHeader(),
+                    "contentType": "application/json",
+                    "timeout": 0,
+                    "data": JSON.stringify(data),
+                    "success": function (result) {
+                        if (result.data) {
+                            setTimeout(() => { $.notify(result.message, 'success') }, 500)
+                            successManager()
+                            $('#managerModal').modal('hide');
+                        } else {
+                            setTimeout(() => { $.notify(result.message) }, 500)
+                        }
+                    }
+                };
+                $.ajax(settings).done(function (response) {
+                });
+            })
+            $('#updateCompany').click(function (event) {
+                const data = {
+                    'firstname': $('#txtFirstName').val(),
+                    'lastname': $('#txtLastName').val(),
+                    'company_name': $('#txtCompanyName').val(),
+                    'email': $('#txtEmail').val(),
+                    'address': $('#txtCompanyAddress').val(),
+                    'address2': $('#txtCompanyAddress2').val(),
+                    'city': $('#txtCity').val(),
+                    'state': $('#txtState').val(),
+                    'zip': $('#txtZip').val(),
+                }
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    "data": JSON.stringify(data),
+                    url: '/update-company',
+                    headers: setAuthenticationHeader(),
+                    contentType: "application/json",
+                    success: function (result) {
+                        if (result.data) {
+                            $.notify(result.message, 'success');
+                        } else {
+                            $.notify(result.message);
+                        }
+                    },
+                });
+            })
+            bindManager = function (result) {
+                if (result.status) {
+                    if (result.data.length > 0) {
+                        const managers = allmanagers = result.data
+                        let html = '';
+                        for (let i = 0; i < managers.length; i++) {
+                            const manager = managers[i];
+                            if (manager.isDeleted !== true) {
+                                html += '<tr>';
+                                html += '<td>' + manager.firstname + ' ' + manager.lastname + '</td>';
+                                html += '<td>' + manager.email + '</td>';
+                                if (manager.registration_status && manager.registration_status.toLowerCase() === 'registered') {
+                                    html += "<td style='text-transform:capitalize'><span class='label' style='background-color: #63c1c5;'>" + manager.registration_status + '</span></td>';
+                                } else {
+                                    html += "<td style='text-transform:capitalize'><span class='label' style='background-color: #515594'>" + manager.registration_status + '</span></td>';
+                                }
+                                html += '<td>' + formatAMPM(new Date(manager.created_at)) + '</td>';
+                                if (role === 'admin') {
+                                    if (manager.isDeleted) {
+                                        html += '<td style="text-transform:capitalize"><span class="label" style="background-color: #63c1c5;">Yes</span></td>';
+                                    } else {
+                                        html += '<td style="text-transform:capitalize"><span class="label" style="background-color: #515594">No</span></td>';
+                                    }
+                                }
+                                if (role === 'admin') {
+                                    html += '<td><button type="submit" class="btn btn-success" onClick="viewManagerQuestionModal(\'' + manager.manager_token + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                    if (manager.isDeleted) {
+                                        html += '<button type="button" title="Reactive Manager" class="btn btn-success" onclick="deleteManager(\'' + manager.manager_token + '\', false)"><i class="fa fa-check"></i></button></td>';
+                                    } else {
+                                        html += '<button type="button" title="Delete Manager" class="btn btn-danger" onclick="deleteManager(\'' + manager.manager_token + '\', true)"><i class="fa fa-trash"></i></button></td>';
+                                    }
+                                }
+                                html += '</tr>';
+                            }
+                            $('#tblmanagers').html(html);
+                        }
+                    } else {
+                        let html = '';
+                        html += ' <tr>';
+                        html += '<td colspan="6" style="COLOR: red;"> * Profile incomplete.  Please add a Manager </td>';
+                        html += '</tr>';
+                        $('#tblmanagers').html(html);
+                    }
+
+                }
+            }
+            $('#txtQuestionManager').on('keypress', function (e) {
+                if (e.keyCode === 13) {
+                    $('#saveQuestionManager').click();
+                }
+            })
+            $('#saveQuestionManager').click(function (e, isSave) {
+                if (!$('#txtQuestionManager').val()) {
+                    if (isSave !== false) {
+                        $.notify('Please enter a default question');
+                    }
+                    return;
+                }
+                const data = {
+                    'question': $('#txtQuestionManager').val(),
+                }
+                const id = localStorage.getItem('idForQuestion');
+                insertOrUpdate(`/manager/save-question/${id}`, data, viewManagerQuestionModal, id);
+            });
+            deleteManager = function (managerId, isDeleted) {
+                const message = isDeleted ? 'Are you sure you want to delete?' : 'You want to reactive this manager?';
+                const buttonName = isDeleted ? 'Delete' : 'Reactivate';
+                postData(`/delete-manager/${managerId}/${isDeleted}`, getManager, message, buttonName);
+            }
+            function postData(url, callback, message, text, type = 'POST', id = 0) {
+                $.confirm({
+                    title: 'PLEASE CONFIRM',
+                    content: message,
+                    type: 'red',
+                    draggable: false,
+                    typeAnimated: true,
+                    buttons: {
+                        cancel: {
+                            text: 'Cancel',
+                            btnClass: 'btn-cancel',
+                            action: function () { },
+                        },
+                        Confirm: {
+                            text: text,
+                            btnClass: 'btn-pink',
+                            action: function () {
+                                $.ajax({
+                                    type: type,
+                                    url: url,
+                                    headers: setAuthenticationHeader(),
+                                    success: function (result) {
+                                        if (result.status) {
+                                            $.notify(result.message, 'success');
+                                            if (typeof callback === 'function') {
+                                                if (id) { callback(id); } else { callback(); }
+                                            }
+                                        } else {
+                                            $.notify(result.message, { type: 'warning' });
+                                        }
+                                    },
+                                });
+                            },
+                        },
+                    },
+                });
+            }
+            function insertOrUpdate(url, data, callback, id = 0) {
+                $.ajax({
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    url: url,
+                    headers: setAuthenticationHeader(),
+                    contentType: "application/json",
+                    success: function (result) {
+                        if (result.status) {
+                            $.notify(result.message, 'success');
+                            if (typeof callback === 'function') {
+                                if (id) { callback(id); } else { callback(); }
+                            }
+                        } else {
+                            $.notify(result.message, { type: 'warning' });
+                        }
+                    },
+                });
+            }
+            function successManager() {
+                $('#txtManangerFirstname').val('');
+                $('#txtManagerLastname').val('')
+                $('#txtMaangerEmail').val('')
+                managerQuestion = []
+
+                $('#manangerModal').modal('hide')
+                getManager()
+            }
+            function getManager() {
+                getAllData('/get-manager', bindManager, 'GET')
+            }
+            function formatAMPM(date) {
+                var month = parseInt(date.getMonth()) + parseInt(1);
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours || 12;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                return `${month}/${date.getDate()}/${date.getFullYear()} - ${hours}:${minutes} ${ampm}`;
+            }
+            deleteJobQuestion = function (index) {
+                jobs.questions.splice(index, 1);
+                bindJobQuestion();
+            }
+            $('#txtQuestionJob').on('keypress', function (e) {
+                if (e.keyCode === 13) {
+                    $('#saveQuestionJob').click();
+                }
+            })
+            function successJob() {
+                $('#JobDetailModal').modal('hide')
+                getJobDetail()
+            }
+            function getJobDetail() {
+                getAllData('/get-job-detail', bindJobDetail, 'GET');
+            }
+
+            bindJobDetail = function (result) {
+                const managerToken = localStorage.getItem('m_token')
+                const isAccess = localStorage.getItem('adminKey') && localStorage.getItem('type') === 'admin' ? true : false;
+                if (result.status) {
+                    if (result.result.length > 0) {
+                        let html = '';
+                        for (let index = 0; index < result.result.length; index++) {
+                            const jobTitle = result.result[index];
+                            html += '<tr>';
+                            html += '<td>' + jobTitle.title + '</td>';
+                            html += '<td  style="padding-left: 30px;">' + jobTitle.department + '</td>';
+                            html += '<td style="padding-left: 30px;">';
+                            if (isAccess || jobTitle.manager_token === managerToken) {
+                                html += '<button type="button" title="Default Question" class="btn btn-success"  onclick="editJobDetail(\'' + jobTitle.title + "', '" + jobTitle.job_detail_id + "','" +
+                                    jobTitle.department + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                html += '<button type="button" title="Delete Job" class="btn btn-danger" onclick="deleteJobDetail(\'' + jobTitle.job_detail_id + '\')"><i class="fa fa-trash"></i></button>&nbsp;';
+                            } else {
+                                html += '<button disabled type="button" title="Default Question" class="btn btn-success"  onclick="editJobDetail(\'' + jobTitle.title + "', '" + jobTitle.job_detail_id + "','" + jobTitle.department + '\')"><i class="fa fa-eye"></i></button>&nbsp;';
+                                html += '<button disabled type="button" title="Delete Job" class="btn btn-danger"  onclick="deleteJobDetail(\'' + jobTitle.job_detail_id + '\')"><i class="fa fa-trash"></i></button>&nbsp;';
+                            }
+                            html += '</td>';
+                            html += '</tr>';
+                        }
+                        $('#tblJobTitle').html(html);
+
+                    }
+                } else {
+                    let html = '';
+                    html += '<tr>';
+                    html += '<td colspan="3" style="COLOR: red;"> * Profile incomplete.  Please add a Job Title </td>';
+                    html += '</tr>';
+                    $('#tblJobTitle').html(html);
+                }
+
+            }
+            function getAllData(url, callback) {
+                $.ajax({
+                    type: 'GET',
+                    url: url,
+                    headers: setAuthenticationHeader(),
+                    success: function (result) {
+                        callback(result);
+                    },
+                });
+            }
+        })
+
+    </script>
+
+</html>

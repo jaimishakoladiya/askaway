@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title You have been invited to review interview
+  body(style='font-family: Arial,Helvetica Neue,Helvetica,sans-serif; ;')
+    table#backgroundTable.bgBody(cellpadding='0', width='100%', cellspacing='0', border='0')
+      tbody
+        tr
+          td
+            table.container(cellpadding='0', align='center', cellspacing='0', border='0', style=' width: 100%; max-width: 600px; table-layout: fixed;')
+              tbody
+                tr
+                  td
+                    table.container(cellpadding='0', cellspacing='0', border='0', align='center', width='600', style='box-shadow: 0px 0px 32px -12px;  max-width: 600px; table-layout: fixed; width: 100%;')
+                      tbody
+                        tr
+                          td.movableContentContainer.bgItem
+                            .movableContent
+                              table.container(cellpadding='0', cellspacing='0', border='0', align='center', width='600', style=' width: 100%; max-width: 600px; table-layout: fixed;')
+                                tbody
+                                  tr
+                                    td(width='100%', valign='top')
+                                      .contentEditableContainer.contentImageEditable
+                                        .Banner(style="background: #63c1c5")
+                                            .contentEditable(align='left')
+                                              a(href='http://askaway.io')
+                                                  img(width='auto', height='130', alt='Logo', data-default='placeholder', src='https://askaway.io/images/askaway-logo.png', style='padding: 10px; height: 70px')
+                            .movableContent
+                              table.container(cellpadding='0', cellspacing='0', border='0', align='center', style=' width: 100%; max-width: 600px; padding: 10px 10px;table-layout: fixed;')
+                                tbody
+                                  tr
+                                    td(width='100%', colspan='3', align='center', style='padding-top:5px; padding-left: 22px;')
+                                      .contentEditableContainer.contentTextEditable
+                                        .contentEditable(align='left')
+                                          h2(style='margin:0px; padding-top: 20px;') #{managerName},
+                                  tr
+                                    td(width='100%', colspan='3', align='center')
+                                      .contentEditableContainer.contentTextEditable(style='padding: 20px;padding-top: 15px;')
+                                        .contentEditable(align='left')
+                                          p(style='padding: 0;margin-bottom:0;color: #000;font-size:16px;margin-left: 20px;')
+                                            | Your candidate #{candidateName}, which you invited to interview for the position of #{jobName}, has finished and uploaded  the interview.
+                                          p(style='padding: 0;margin-bottom:0;color: #000;font-size:16px;margin-left: 20px;')
+                                            | Click on the button below to review it.
+                              table.container(cellpadding='0', cellspacing='0', border='0', align='center', style=' width: 100%; max-width: 600px; table-layout: fixed;')
+                                tbody
+                                  tr
+                                    td(width='100%', align='center', style='padding-top:25px;')
+                                      table(cellpadding='0', cellspacing='0', border='0', align='center', width='200', height='50')
+                                        tbody
+                                          tr
+                                            td(bgcolor='#63c1c5', align='center', style='border-radius:4px; color:#fff;', width='200', height='50')
+                                              .contentEditableContainer.contentTextEditable
+                                                .contentEditable(align='center')
+                                                  a.link2(target='_blank', href=sharedGridURL, style='color:#fff;text-decoration:none;font-weight: bold;text-transform: uppercase;') Play Interview
+                              table.container(cellpadding='0', cellspacing='0', border='0', align='center', width='600', style=' width: 100%; max-width: 600px; table-layout: fixed;')
+                                tbody
+                                  tr
+                                    td(width='100%', align='center')
+                                      table(cellpadding='0', cellspacing='0', border='0', align='left', width='100%', height='50')
+                                        tbody
+                                          tr
+                                            td(align='center', width='20', height='50')
+                                              .contentEditableContainer.contentTextEditable(style='margin: 0 0 33px 33px;')
+                                                .contentEditable(align='left')
+                                                  p(style='padding: 0; margin-bottom:0; color: #323232; font-size:22px; font-weight:bold;') Thank you

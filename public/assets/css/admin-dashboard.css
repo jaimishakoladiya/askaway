@@ -1,0 +1,760 @@
+
+/*============----------------Font family start here----------------====================*/
+
+@font-face {
+    font-family: 'Segoe UI-light';
+    src: url('../fonts/SegoeUI-Light.eot');
+    src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-Light.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Light.woff') format('woff'),
+        url('../fonts/SegoeUI-Light.ttf') format('truetype'),
+        url('../fonts/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI-black';
+    src: url('../fonts/SegoeUIBlack.eot');
+    src: url('../fonts/SegoeUIBlack.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUIBlack.woff2') format('woff2'),
+        url('../fonts/SegoeUIBlack.woff') format('woff'),
+        url('../fonts/SegoeUIBlack.ttf') format('truetype'),
+        url('../fonts/SegoeUIBlack.svg#SegoeUIBlack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI-normal';
+    src: url('../fonts/SegoeUI.eot');
+    src: url('../fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI.woff2') format('woff2'),
+        url('../fonts/SegoeUI.woff') format('woff'),
+        url('../fonts/SegoeUI.ttf') format('truetype'),
+        url('../fonts/SegoeUI.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI-bold';
+    src: url('../fonts/SegoeUI-Bold.eot');
+    src: url('../fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-Bold.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Bold.woff') format('woff'),
+        url('../fonts/SegoeUI-Bold.ttf') format('truetype'),
+        url('../fonts/SegoeUI-Bold.svg#SegoeUI-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Semilight';
+    src: url('../fonts/SegoeUI-Semilight.eot');
+    src: url('../fonts/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-Semilight.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Semilight.woff') format('woff'),
+        url('../fonts/SegoeUI-Semilight.ttf') format('truetype'),
+        url('../fonts/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+/*============----------------Font family End here----------------====================*/
+
+
+
+body {
+    font-family: 'Segoe UI-normal';
+    background-color: #fff8e6;
+    height: 830px;
+    position: relative;
+}
+h1, h2, h3, h4, h5, h6{
+	    font-family: 'Segoe UI-black';
+}
+.pt-10{
+	padding-top:10px;
+}
+.pt-20{
+	padding-top:20px;
+}
+.pt-30{
+	padding-top:30px;
+}
+.pt-40{
+	padding-top:40px;
+}
+.pt-50{
+	padding-top:50px;
+}
+.pb-50{
+	padding-bottom:50px;
+}
+.mb-10{
+	margin-bottom:10px;
+}
+.mt-50{
+	margin-top:50px;
+}
+.mt-20{
+	margin-top:20px;
+}
+.mb-50{
+	margin-bottom:50px;
+}
+.mb-30{
+	margin-bottom:30px;
+}
+.ml-10{
+	margin-left: 10px;
+}
+.ml-20{
+		margin-left: 20px;
+}
+.m-0{
+	margin: 0px !important;
+}
+.pl-0{
+	margin-left:0px !important;
+}
+ul {
+    padding-left: 18px;
+}
+ p{
+    font-size: 1rem;
+    margin: 0;
+}
+
+			/*============----------------Description page style start here----------------====================*/
+
+
+.interview {
+    background-image: url(../img/first-bg.jpg);
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 11%;
+    padding-left: 5%;
+}
+.navbar-brand img {
+    width: 13%;
+    margin-left: 5%;
+}
+a.navbar-brand {
+    display: contents;
+    float: left;
+}
+p {
+    font-size: 1rem;
+}
+nav.navbar.navbar-default.navbar-fixed-top {
+    position: absolute;
+    z-index: 1;
+}
+
+.description{
+	color:#fff;
+}
+.footer p {
+    font-size: 0.8rem;
+}
+
+/*============----------------Description page style End here----------------====================*/
+
+.instruction {
+    background-image: url(../img/sec-bg.jpg);
+    height: 728px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15%;
+    padding-left: 5%;
+    padding-bottom: 82px;
+}
+.instruction img.img-fluid {
+    position: relative;
+    bottom: -91px;
+}
+.instruction li {
+    font-size: 14px;
+    color: white;
+}
+.instruction .description {
+    color: #fff;
+    margin-top: -40px;
+}
+label.form-check-label {
+    padding-top: 20px;
+    color: #fff;
+}
+
+
+
+.interview-setup {
+    background-image: url(../img/third-bg.jpg);
+    height: 885px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 11%;
+    padding-left: 5%;
+    width: 100%;
+}
+video {
+    width: 100%;
+}
+.btn_control {
+ 
+}
+.cube {
+	  z-index:1;
+	  position:relative;
+	  height: 300px;
+	  border-left: 2px solid #3EC8AC;
+	  border-right: 2px solid #4E90A4;
+	  border-top: 2px solid #3EC8AC;
+	  border-bottom: 2px solid #4E90A4;
+	  border-radius: 5px;
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	  background-position: 0 0, 0 100%;
+	  background-repeat: no-repeat;
+	  -webkit-background-size: 100% 20px;
+	  -moz-background-size: 100% 20px;
+	  background-size: 100% 20px;
+	  background-image: -webkit-linear-gradient(left, #3EC8AC 0%, #4E90A4 100%), -webkit-linear-gradient(left, #3EC8AC 0%, #4E90A4 100%);
+	  background-image: -moz-linear-gradient(left, #3EC8AC 0%, #4E90A4 100%), -moz-linear-gradient(left, #3EC8AC 0%, #4E90A4 100%);
+	  background-image: -o-linear-gradient(left, #3EC8AC 0%, #4E90A4 100%), -o-linear-gradient(left, #3EC8AC 0%, #4E90A4 100%);
+	  background-image: linear-gradient(to right, #3EC8AC 0%, #4E90A4 100%), linear-gradient(to right, #3EC8AC 0%, #4E90A4 100%);
+	  box-shadow: 6px 4px 15px -4px;
+	  }
+.btn_control {
+    width: 100%;
+    color: #122dff;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    border-left: 2px solid #3EC8AC;
+    border-right: 2px solid #4E90A4;
+    border-top: 2px solid #3EC8AC;
+    border-bottom: 2px solid #4E90A4;
+    position: relative;
+    padding: 25px 15px;
+    background: #ffff;
+    bottom: 16px;
+    z-index: 0;
+}
+button.btn {
+    font-size: 13px;
+    padding: 8px 36px;
+		font-family: 'Segoe UI-bold';
+}
+.btn_control span {
+
+    font-size: 11px;
+
+}
+h2.main_title b {
+    font-size: 1.7rem;
+}
+.interview-setup .right-bottom {
+    margin-top: 140px;
+}
+span.main_question {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    float: left;
+    padding-right: 20px;
+}
+.main_title {
+    padding-right: 40px;
+    text-transform: uppercase;
+	font-family: 'Segoe UI-black';
+}
+.width-60 {
+    float: left;
+}
+
+/*============----------Interview start here----------=============*/
+
+.interview-first{
+	background-image: url(../img/question-bg.jpg);
+    height: 795px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 11%;
+    padding-left: 5%;
+    width: 100%;
+}
+
+
+
+/*============----------Interview end here----------=============*/
+
+/*============----------Thank you start here----------=============*/
+.thankYou{
+	background-image: url(../img/goodBye.jpg);
+    height: 625px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 11%;
+    padding-left: 5%;
+    width: 100%;
+}
+
+.thankYou-candidate{
+     margin-top: -149px;
+    width: 670px;
+    height: 610px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #63c1c5;
+    border-color: #5ca7f7;
+}
+/*============----------thankyou end here----------=============*/
+
+
+/*============----------steps start here----------=============*/
+
+.instruction-new {
+    background-image: url(../img/all-steps.png);
+    height: 670px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15%;
+    padding-bottom: 82px;
+}
+.admin-steps {
+    background-color: #fff;
+	    border-radius: 10px;
+}
+.admin-steps li.nav-item {
+    width: 20%;
+}
+
+a.nav-link.small.text-uppercase {
+    padding: 25px;
+    text-align: center;
+    font-family: 'Segoe UI-black';
+	color: #323232;
+	text-transform: capitalize !important;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+a.nav-link.small.text-uppercase.active.show {
+    color: #014ee5;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: transparent;
+    border-color: transparent;
+}
+.card-body {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+div#tabsJustifiedContent {
+    width: 100%;
+    background: #fff;
+	  border-radius: 10px;
+}
+input#exampleInputEmail1 {
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
+    margin-top: 10px;
+	font-size: 0.8rem;
+}
+button.btn.btn-success {
+    padding: 8px;
+		font-family: 'Segoe UI-bold';
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+    border-bottom: 2px solid #63c1c5 !important;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+a.nav-link.small.text-uppercase.active.show .img1 {
+    opacity: 0;
+}
+a.nav-link.small.text-uppercase.active.show img.img1 {
+    position: absolute;
+}
+img.img1 {
+    position: absolute;
+}
+img.img {
+    opacity: 0;
+}
+a.nav-link.small.text-uppercase.active.show img.img{
+	   opacity: 1;
+}
+.form-group {
+    margin-bottom: 1rem;
+    width: 40%;
+    float: left;
+    padding-right: 30px;
+    margin-left: 16px;
+}
+.btns {
+    padding: 0px 4% 26px;
+}
+div#home1:after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/admin.png);
+    height: 85%;
+    width: 38%;
+    background-size: 67%;
+    z-index: 99;
+    top: 160px;
+    background-position: right;
+    right: -70px;
+    background-repeat: no-repeat;
+}
+div#profile1:after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/contact.png);
+    height: 97%;
+    width: 27%;
+    background-position: right;
+    background-size: 100%;
+    z-index: 99;
+    top: 90px;
+    right: -101px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+div#messages1:after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/jobInfo.png);
+    height: 105%;
+    width: 39%;
+    z-index: 99;
+    top: 170px;
+    right: -80px;
+    background-repeat: no-repeat;
+}
+div#messages2:after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/summary.png);
+    height: 85%;
+    width: 66%;
+    background-size: 67%;
+    z-index: 99;
+    top: 140px;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+div#messages3:after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/invite.png);
+    height: 60%;
+    width: 67%;
+    background-position: right;
+    background-size: 67%;
+    z-index: 99;
+    top: 260px;
+    right: -50px;
+    background-repeat: no-repeat;
+}
+footer.footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+#profile1 .form-group {
+    width: 100%;
+}
+
+#messages1 .form-group {
+    width: 75%;
+}
+.cap {
+    text-transform: uppercase;
+    clear: both;
+    padding: 0;
+}
+
+.messages1 p {
+    font-family: 'Segoe UI-bold';
+    font-size: 15px;
+    width: 62%;
+    float: left;
+}
+.sizeing input#exampleInputEmail1 {
+    width: 50%;
+    float: left;
+	    font-size: 0.8rem;
+}
+.messages1 form {
+    box-shadow: 0px 0px 27px -11px;
+    border-radius: 10px;
+    padding: 15px 15px 35px;
+	margin-top:30px;
+}
+
+.badge-secondary {
+    margin: 0px 27px;
+	    background-color: #6c757d4d;
+}
+
+.half {
+    width: 18%;
+    float: left;
+    margin-top: -20px;
+}
+
+
+/*============----------Start css start here----------=============*/
+.tab-pane {
+    height: 420px;
+}
+.btns {
+    padding: 0px 3% 25px;
+    position: absolute;
+    top: 39px;
+    width: 100%;
+}
+#profile1 li {
+    display: inline-block;
+}
+.halfSection {
+    width: 50%;
+    float: left;
+    padding-left: 5px;
+}
+.halfSection p {
+    width: 100%;
+}
+.borderRight{
+	border-right: 1px solid #eee;
+	padding-right: 10px;
+}
+.newSize p{
+	   width: 100%;
+}
+.position {
+	 width: 100% !important;
+}
+.invitation span {
+    width: 100%;
+    float: left;
+    padding-bottom: 10%;
+}
+/*============----------Start css End here----------=============*/
+
+
+
+/*============----------Admin css Start here----------=============*/
+
+
+
+.jobTitle button#dropdownMenuButton {
+    background: transparent;
+    color: #000;
+    padding: 0;
+    border: 0px;
+} 
+.jobTitle .btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0);
+}
+.Admin {
+    background-image: url(../img/admin-Bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 48%;
+    padding-top: 15%;
+    padding-bottom: 82px;
+}
+.caps{
+	text-transform: uppercase;
+}
+.Admin li.nav-item {
+    width: 33%;
+}
+
+.bg-trans{
+	background: transparent !important;
+}
+
+.padding-0{
+	padding: 0px;
+}
+.jobTitle .btn-dark {
+    padding: 3px 10px;
+    margin-left: 39px;
+}
+.transBG{
+	background-color: #fff;
+	height: 100%;
+}
+.adminFooter{
+background-color: #eee;
+}
+.table td, .table th {
+    border-top: 1px solid #dee2e600;
+	vertical-align: middle;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e645;
+    text-transform: uppercase;
+	    font-family: 'Segoe UI-black';
+}
+#company .card.mt-20 {
+    border-radius: 10px;
+    box-shadow: 0px 0px 32px -10px;
+}
+
+.adminSteps {
+    position: absolute;
+    z-index: 9;
+    top: 25px;
+    right: 118px;
+    background-repeat: no-repeat;
+    height: 201px;
+}
+.card.first .card-body {
+    background: unset;
+}
+#company .card.first:before {
+    background-image: url(../img/companyProfile.png) !important;
+    background-repeat: no-repeat;
+    z-index: 99999999999999999999;
+    content: '';
+    position: absolute;
+    height: 410px;
+    width: 428px;
+    bottom: -160px;
+    right: -90px;
+}
+
+#company .secCard:before {
+	background-image: url(../img/manager.png) !important;
+    background-repeat: no-repeat;
+    z-index: 99999999999999999999;
+    content: '';
+    position: absolute;
+    height: 410px;
+    width: 428px;
+    bottom: -160px;
+    right: -90px;
+	
+}
+
+#company .thirdCard:before {
+	background-image: url(../img/jobTitle.png) !important;
+    background-repeat: no-repeat;
+    z-index: 99999999999999999999;
+    content: '';
+    position: absolute;
+    height: 410px;
+    width: 428px;
+    bottom: -160px;
+    right: -90px;
+	
+}
+.card{
+	width: 100%;
+}
+.Admininterview .card-body {
+    padding: 0;
+}
+thead.blueBg tr th {
+    background: #2571bf;
+    color: #fff;
+}
+.Admininterview .card {
+    border: 1px solid #2476c5;
+}
+.Admininterview .card tbody tr td {
+    padding-left: 31px !important;
+}
+.Admininterview tr.result td {
+    border-top: 1px solid #eee !important;
+}
+.modal .float-left ul {
+    list-style: none;
+}
+.modal .float-left ul li{
+    display: inline-block;
+}
+.rating.float-left {
+    right: 131px;
+    position: relative;
+}
+.rating ul {
+    padding: 0;
+}
+/*============----------Admin css End here----------=============*/
+
+
+
+/*============----------media query start here----------=============*/
+@media (max-width: 1200px){
+	
+	.adminSteps {
+		display:none;
+	}
+	
+}
+@media (max-width: 768px){
+	
+	.adminSteps {
+		display:none;
+	}
+	.instruction .description {
+    color: #fff;
+    margin-top:50px;
+}
+.instruction img.img-fluid {
+    position: relative;
+    bottom: -21px;
+}
+	.thankYou-candidate{
+		display:none;
+	}
+	.navbar-brand img {
+    width: 20%;
+    margin-left: 5%;
+}
+.thankYou {
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+div#home1:after {
+	display:none;
+}
+.instruction-new li p {
+    font-size: 13px;
+}
+div#profile1:after {
+	display:none;
+}
+div#messages1:after {
+	display:none;
+}
+div#messages2:after {
+	display:none;
+}
+div#messages3:after {
+	display:none;
+}
+}
+
+/*============----------media query end here----------=============*/

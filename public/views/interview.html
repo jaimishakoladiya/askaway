@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+	<header class="fixed-top header-fixed header-size">
+		<div class="logo" style="text-align: left; margin: 10px 0 0 0; padding-left: 8rem">
+			<a class="home-link" href="/">
+				<img src="/public/assets/img/askaway-logo.png" alt="Askaway" style="height: 45px;">
+			</a>
+		</div>
+	</header>
+	<div>
+		<div class="interview-first container" id="interview-first">
+			<div class="interviewheader" id="interviewheader" style="margin:0 auto 20px; padding:15px;"></div>
+			<div class="interview-first__text">
+				<h1 class="primary-heading">
+					<span class="main_question">
+						<span id="question_no">
+							Q:1
+						</span>
+					</span>
+					<b id="question">Loading..</b>
+				</h1>
+			</div>
+			<div class="interview-first__video">
+				<div id="video-holder">
+					<video style="width: 100%;" autoplay class="video-cube video-cube-intial" type="video/mp4"
+						id="video-interview"></video>
+				</div>
+			</div>
+			<div class="interview-first__video--buttons">
+				<button type="button" id="btn-stop-recording" class="btn btn-pink">Next Question</button>
+				<button type="button" id="btn-start-recording" class="btn btn-pink" style="display:none;">Next
+					Question</button>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+<script>
+	var token = sessionStorage.getItem('key') || '';
+	var btnStartRecording = document.querySelector('#btn-start-recording');
+	var btnStopRecording = document.querySelector('#btn-stop-recording');
+	var videoElement = document.querySelector('video');
+	var playTimer = document.getElementById('time_left');
+	var recorder;
+	var questionData = {};
+	var indexQuestionLoad = 0;
+	var mediaStream = null;
+
+	$(document).ready(function () {
+		$('.interviewheader').html('Please do not click outside windows.');
+		const tokenVal = token.split('/')[1]
+		window.addEventListener('focus', function (e) {
+			if (tokenVal !== "0000000000") {
+				$.get('/addattempt/' + token, function (data, status) {
+				})
+			}
+		})
+		window.addEventListener('blur', function (e) {
+		})
+		updateQuestion(true)
+	})
+
+
+	function updateQuestion(isCount = false) {
+		$.get('/getquestion/' + token + '/' + isCount, function (data, status) {
+			const tokenVal = token.split('/')[1]
+			if (tokenVal === '0000000000') {
+				let practiceData = data.questions;
+				if (practiceData.length > indexQuestionLoad) {
+					$('#question').html(practiceData[indexQuestionLoad].question);
+					$('#question_no').html('Q:' + (+practiceData[indexQuestionLoad].order + 1));
+					startVideoRecording();
+					indexQuestionLoad++;
+					return;
+				} else {
+					stopVideoRecording()
+					if (recorder) { recorder.stopRecording(postFiles); }
+					$('#interview-first').empty();
+					$('#interview-first').load('/public/views/PracticeinterviewgoodBye.html');
+				}
+			} else {
+				if (status === 'success') {
+					if (data.status === false) {
+						stopVideoRecording();
+						$('#interview-first').load('/public/views/Atttempt.html');
+					} else {
+						questionData = data;
+						$('#question').html(questionData.question);
+						$('#question_no').html('Q:' + (+questionData.order + 1));
+						startVideoRecording();
+						return;
+					}
+				} else if (status === 'nocontent') {
+					stopVideoRecording()
+					if (recorder) { recorder.stopRecording(postFiles); }
+					$('#interview-first').empty();
+					$('#interview-first').load('/public/views/goodBye.html');
+
+				}
+			}
+		}, 'json').fail(function () {
+			stopVideoRecording();
+		})
+	}
+
+	function generateRandomString() {
+		if (window.crypto) {
+			var a = window.crypto.getRandomValues(new Uint32Array(3));
+			var token = '';
+			for (var i = 0, l = a.length; i < l; i++) token += a[i].toString(36);
+			return token;
+		} else {
+			return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+		}
+	}
+
+	function startVideoRecording() {
+		captureUserMedia(function (stream) {
+
+			mediaElemet = stream;
+			videoElement.srcObject = stream;
+			videoElement.muted = true;
+			recorder = RecordRTC(stream, {
+				type: 'video',
+			});
+			recorder.startRecording();
+			setTimeout(function () {
+				$('#btn-stop-recording').show();
+				
+				btnStopRecording.disabled = false;
+			}, 1000)
+
+		})
+
+	}
+
+	btnStartRecording.onclick = function () {
+		btnStartRecording.disabled = true;
+		stopVideoRecording();
+	};
+
+	btnStopRecording.onclick = function () {
+		btnStartRecording.disabled = false;
+		$('#btn-stop-recording').hide();
+		btnStopRecording.disabled = true;
+		startNextQuestion();
+		updateQuestion();
+	};
+
+	function startNextQuestion() {
+		stopVideoRecording();
+	}
+	function stopVideoRecording() {
+		if (token !== '0000000000') {
+			if (recorder) { recorder.stopRecording(postFiles); }
+		}
+	}
+
+	function postFiles() {
+		var blob = recorder.getBlob();
+		var fileName = generateRandomString() + '.webm';
+		var file = new File([blob], fileName, { type: 'video/webm' });
+		xhr('/start/videoUpload/uploadFile', file, function (responseText) { });
+       
+		if (mediaStream) mediaStream.stop();
+	}
+
+	function xhr(url, data, callback) {
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function () {
+			if (request.readyState === 4 && request.status === 200) {
+				callback(request.responseText)
+			}
+		}
+		console.log(data)
+		request.open('POST', url);
+		var formData = new FormData();
+		formData.append('file', data);
+		formData.append('key', sessionStorage.getItem('key') || '');
+		formData.append('question', $('#question').html());
+		formData.append('qno', parseInt(($('#question_no').html()).split("Q:")[1]) - 1);
+		console.log(formData)
+		request.send(formData);
+	}
+
+</script>
+
+</html>

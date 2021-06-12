@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" async="" src="./contact_files/analytics.js.download"></script>
+    <script async="" src="./contact_files/gtm.js.download"></script>
+    <meta name="viewport" content="width=device-width , initial-scale=1">
+    <title>AskAway - About / Contact Us</title>
+    <link href="./contact_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./contact_files/style.css" rel="stylesheet">
+    <link href="./contact_files/animate.css" rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W42W2JX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header" style="background-color: #63c1c5;padding: 1.5rem;">
+        <div class="container">
+            <div class="account-links" style="font-size: large;">
+                <a href="/login" target="_blank">LOGIN</a>
+                <a href="/register" target="_blank">CREATE ACCOUNT</a>
+            </div>
+            <div class="navigation">
+                <a href="/contact">CONTACT</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="contactus" class="conatctus section-membership bg-aqua">
+            <div class="">
+                <h2 class="title-font" style="background-color: #f6c34c;color: black;padding: 5px;">CONTACT US</h2>
+                <p class="textCaseNone">As a new company, we want to hear your comments.</p>
+                <form class="col-lg-10 mx-auto">
+                    <div class="form-group row removeMargin">
+                        <label for="name" class="col-sm-2 text-right"><b>Name:</b></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" style="background-color: aliceblue" id="name">
+                        </div>
+                        <label for="email" class="col-sm-2 text-right"><b>Email:</b></label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" style="background-color: aliceblue" id="email">
+                        </div>
+                    </div>
+                    <div class="form-group row removeMargin">
+                        <label for="subject" class="col-sm-2 text-right"><b>Subject:</b></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" style="background-color: aliceblue" id="subject">
+                        </div>
+                    </div>
+                    <div class="form-group row removeMargin">
+                        <label for="description" class="col-sm-2 text-right"><b>Comment:</b></label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="description" style="background-color: aliceblue"
+                                rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row removeMargin">
+                        <label for="comment" class="col-sm-2 text-right"></label>
+                        <div class="col-sm-10" style="margin-bottom: 80px;">
+                            <button class="btn" type="button" id="submit"
+                                style="background-color: #f6c34c;height: 139%;float: right;"> Submit </button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </section>
+        <footer class="footer"
+            style="text-align: center;background-color: #63c1c5; border-top:10px solid #f6c34c;position: absolute; width: 100%;">
+            <a href="/" target="_blank">
+                <img src="./contact_files/askaway-logo.png" class="footer-logo" alt="ask away">
+            </a>
+            <p>AskAway © 2020. All Rights Reserved</p>
+        </footer>
+    </main>
+
+    <script src="./contact_files/jquery-3.4.1.min.js.download" type="text/javascript"></script>
+    <script src="./contact_files/bootstrap.bundle.min.js.download" type="text/javascript"></script>
+    <script src="./contact_files/wow.min.js.download" type="text/javascript"></script>
+    <script src="/public/assets/js/notify.min.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+        $(document).ready(function () {
+            $('#submit').click(function () {
+                var data = {}
+                data.name = $('#name').val()
+                data.subject = $('#subject').val()
+                data.email = $('#email').val()
+                data.description = $('#description').val()
+                const pattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                if (!data.name || !data.subject || !data.description) {
+                    return $.notify('Please enter all fields', { type: 'danger' })
+                }
+                else if (!pattern.test(data.email)) {
+                    $.notify("Please enter valid email", { type: 'danger' })
+                }
+                else {
+                    event.preventDefault();
+                    var settings = {
+                        "url": "/contact",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify(data),
+                        "success": function (result) {
+                            if (result.status === true) {
+                                $.notify("Thanks for contacting us..", "success")
+                            }
+                            else {
+                                $.notify(result, { type: 'danger' })
+                            }
+                            setTimeout(() => { window.location.href = '/'; }, 2000)
+                        }
+                    }
+                }
+                $.ajax(settings).done(function (response) {
+                    // console.log(response);s
+                });
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

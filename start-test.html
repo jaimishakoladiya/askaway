@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>AskAway - Start Test</title>
+	<meta name="description" content="A BETTER INTERVIEW" />
+
+	<link rel="shortcut icon" href="/public/assets/img/Favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="/public/assets/css/jquery-confirm.min.css">
+	<link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/admin/css/style.css">
+	<style>
+		.jconfirm-type-pink {
+			border-top: solid 7px #e05364;
+		}
+
+		.modalbtn {
+			background-color: #e05364;
+			text-align: center;
+			width: 37%;
+		}
+		.jconfirm-buttons {
+			float: unset !important;
+			text-align: center !important;
+			padding-bottom: 60px !important;
+		}
+
+		.jconfirm.jconfirm-light .jconfirm-bg {
+			opacity: 0.7 !important;
+		}
+		.btn {
+			color: #ffffff;
+		}
+	</style>
+</head>
+
+<body class="transBG">
+	<header class="fixed-top header-fixed header-size">
+		<div class="logo" style="text-align: left; margin: 10px 0 0 0; padding-left: 8rem">
+			<a class="home-link" href="/">
+				<img src="/public/assets/img/askaway-logo.png" alt="Askaway" style="height: 45px;">
+			</a>
+		</div>
+	</header>
+
+	<div id="start" class="start">
+		<section class="dbContent">
+			<div class="video vcontainer" style="margin-top: 100px;">
+				<div class="videoheader" id="videoheader" style="margin:0 auto 20px; padding:15px;"></div>
+				<!-- <video id="faststart-video" type="video/mp4" autoplay="" src="/public/assets/img/Taking_Interview.mp4"
+					controls="">
+				</video> -->
+				<p>TIPS</p>
+				<p>	•	Test your internet connection, camera, sound, video program, and test it all again right before the interview process.</p>
+				<p> •	Select the proper location for the interview, control the lighting, and display a generic background.   </p>	
+					•	Dress professionally and avoid bright colors. Remember nothing too flashy or suggestive with clothing.</br>
+					•	You need to speak very clearly and avoid mumbling or talking too fast, they are much more noticeable in an online interview.</br>
+					•	Look directly into the camera and not at the screen or monitor to make good eye contact.
+					</p>
+				<div class="agree-for-interview" style="margin-bottom: 100px;">
+					<div class="form__radio-group">
+						<input type="checkbox" class="form__radio-input" id="acceptedTC" name="acceptedTC"
+							value="acceptedTC">
+						<label for="acceptedTC" class="form__radio-label mb-0">
+							<span class="form__radio-button"></span>
+							I Agree
+						</label>
+					</div>
+					<button type="button" id="startTest" class="btn btn-pink">Continue</button>
+				</div>
+			</div>
+
+		</section>
+	</div>
+	<div id="footer" style="position: fixed;">
+		<footer class="footer" style="text-align: center;">
+			<a href="https://askaway.io/" target="_blank">
+				<img src="/public/assets/img/askaway-logo.png" class="footer-logo" alt="Askaway">
+			</a>
+			<p>AskAway © 2020. All Rights Reserved</p>
+		</footer>
+	</div>
+	<div class="preloader"></div>
+	<script src="/public/assets/js/jquery.min.js"></script>
+	<script src="/public/assets/js/notify.min.js"></script>
+	<script src="/public/assets/js/bootstrap.min.js"></script>
+	<script src="/public/assets/js/jquery-confirm.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js'></script>
+</body>
+<script>
+
+	$(document).ready(function () {
+		var pathname = location.href;
+		var token = pathname.split('start/')[1];
+		const tokenval = token.split('/')[1];
+		if (tokenval !== '0000000000') {
+			$('#videoheader').html('please follow below tips before your start the interview process.');
+		} else {
+			$('.videoheader').css("background-color", "#F55157")
+			$('#videoheader').html(`This is practice interview. Use it to get acquainted with the interview process.`);
+		}
+
+		$('#startTest').prop('disabled', true);
+		$('#acceptedTC').change(() => {
+			if ($('#acceptedTC').is(':checked')) {
+				$('#startTest').prop('disabled', false);
+
+			} else {
+				$('#startTest').prop('disabled', true);
+			}
+		})
+
+		$('#startTest').click(() => {
+			$('#start').empty();
+			$('#start').load('/public/views/setup.html');
+			const key = window.location.href.split('/start/')[1];
+			if (!key) {
+				return false;
+			}
+			sessionStorage.setItem('key', key);
+			$('#start').addClass('setup');
+
+		})
+	});
+</script>
+
+</html>

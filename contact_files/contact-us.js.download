@@ -1,0 +1,55 @@
+$(document).ready(function () {
+    $('#submit').click(function () {
+        var data = {}
+        data.name = $('#name').val()
+        data.subject = $('#subject').val()
+        data.email = $('#email').val()
+        data.description = $('#description').val()
+        var error = false;
+        if (!data.name) {
+            error = true;
+            toastr.error('Please enter Name');
+            return 'Please enter Name';
+        }
+        if (!data.email) {
+            error = true;
+            toastr.error('Please enter email');
+            return 'Please enter email';
+        }
+        if (!data.subject) {
+            error = true;
+            toastr.error('Please enter subject');
+            return 'Please enter subject';
+        }
+        if (!data.description.trim()) {
+            error = true;
+            toastr.error('Please enter description');
+            return 'Please enter description';
+        }
+        if (!error) {
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify(data),
+                timeout: 6000,
+                url: 'https://test.askaway.io/savereview',
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.status === 200) {
+                        $('#name').val('');
+                        $('#subject').val('');
+                        $('#description').val('');
+                        $('#email').val('');
+                        toastr.success('Message sent successfully');
+                    } else {
+                        toastr.error(result.msg);
+                    }
+                },
+            });
+        }
+    })
+})
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }

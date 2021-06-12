@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>AskAway - Manager View</title>
+	<meta name="description" content="A BETTER INTERVIEW" />
+
+	<link rel="shortcut icon" href="/public/assets/img/Favicon.png" type="image/x-icon">
+
+	<link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
+	<link href="/public/managers/assets/company-profile/content/css/animation.css" rel="Stylesheet" type="text/css" />
+	<link rel="Stylesheet" href="/public/managers/assets/company-profile/content/css/customeStyle.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link rel="stylesheet" href="/public/assets/css/jquery-confirm.min.css">
+	<link rel="stylesheet" href="/public/assets/plugin/datatable/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="/public/assets/plugin//datatable//buttons/buttons.dataTables.min.css">
+	<link rel="stylesheet" href="/public/assets/css/andrew.css">
+
+
+	<style>
+		span.label {
+			background-color: #5cb85c;
+			padding: .2em .6em .3em;
+			font-size: 75%;
+			font-weight: 700;
+			color: #fff;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: baseline;
+			border-radius: .25em;
+		}
+
+		.question-panel {
+			padding-left: 5px !important;
+		}
+
+		li.chips:not(:first-child) {
+			margin-left: 10px;
+		}
+
+		table .img-candidate {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+		}
+
+		.dropdownfont {
+			font-family: Helvetica !important;
+			font-size: 12px !important;
+			font-weight: 400 !important;
+		}
+
+		#CreatInteview .mk-stepper-step__body {
+			overflow: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="header"> </div>
+	<section class="dbContent">
+		<div class="container divPosition company_profile">
+			<div class="row">
+				<div class="col">
+					<div id="accordion" class="accordion">
+						<div class="scrollable-btns">
+							<button type="button" class="btn btn-pink" id="Information_click">Create
+								Interview
+							</button>
+							<button type="button" class="btn btn-cancel" id="archiveCandidate">Archive
+								Candidate</button>
+							<button type="button" class="btn btn-cancel" id="deleteCandidate">Delete
+								Candidates</button>
+							<button type="button" class="btn btn-cancel" id="showArchiveCandidate">Show
+								All</button>
+							<button type="button" class="btn btn-cancel" id="printnew" style="display: none">Print
+								new</button>
+							<div id="printbtn"></div>
+						</div>
+						<div class="clearfix"> </div>
+
+						<div id="CreatInteview" class="card card-body mb-5 hide">
+							<div class="mk-stepper mk-stepper--vertical mdc-typography--body1 mdc-elevation--z3">
+								<a class="card-title">
+									<h1 class="float-left title-font" id="title-Name">New Interview</h1>
+								</a>
+								<details class="mk-stepper-step" open>
+									<summary class="mk-stepper-step__header"><span class="mk-stepper-step__icon"
+											id='icon-1'>1</span>
+										<span class="mk-stepper-step__label"><a class="card-title">
+												<h3 class="float-left title-font">Candidate</h3>
+											</a></span>
+									</summary>
+									<div class="mk-stepper-step__body">
+										<div>
+											<div class="form-inline customForm row">
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-user"></i>
+													<input type="text" class="form-control" placeholder="First Name"
+														id='dashboard_candidate_first_name'>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-user"></i>
+													<input type="text" class="form-control" placeholder="Last Name"
+														id='dashboard_candidate_last_name'>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-envelope"></i>
+													<input type="text" class="form-control" placeholder="Email"
+														id='dashboard_candidate_email'>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<button type="button" class="btn btn-pink mb-2m mt-3 mb-3"
+														id='dashboard_candidate_add_button'>
+														Add
+													</button>
+												</div>
+												<div class="form-group mb-2 col-md-12">
+													<button type="button" class="btn btn-pink  mb-2m mt-3 mb-3"
+														id='dashboard_candidate_next_button'>
+														Next
+													</button>
+												</div>
+												<ul class="list-unstyled list-inline" id='candidate-chips'>
+											</div>
+											</ul>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</details>
+								<details class="mk-stepper-step">
+									<summary class="mk-stepper-step__header"><span class="mk-stepper-step__icon"
+											id='icon-2'>2</span><span class="mk-stepper-step__label">
+											<h3 class="title-font">Organization Info</h3>
+										</span>
+									</summary>
+									<div class="mk-stepper-step__body">
+										<div>
+											<div class="form-inline customForm row">
+												<div class="col-12 pl-0 pb-2">
+													<h3 class="title-font">Manager</h3>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-user"></i>
+													<input type="text" class="form-control" placeholder="First Name"
+														id="dashboard_manager_first_name">
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-user"></i>
+													<input type="text" class="form-control" placeholder="Last Name"
+														id="dashboard_manager_last_name">
+												</div>
+												<div class="form-group mb-2 col-md-3" id="email1">
+													<i class="fa fa-envelope"></i>
+													<input type="text" class="form-control" placeholder="Email"
+														id="dashboard_manager_email" disabled>
+												</div>
+												<div class="form-group mb-2 col-md-3" id="managermail">
+													<select id="dashboard_manager_email2" class="form-control pl-0">
+													</select>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<button type="button" class="btn btn-pink mb-2m mt-3"
+														id="dashboard_manager_add_button">
+														Add </button>
+												</div>
+												<div class="col-12 mt-20 pl-0 pb-2">
+													<h3 class="title-font">Department</h3>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<select id="department_name" class="form-control pl-0">
+													</select>
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<select id="job_title" class="form-control pl-0">
+													</select>
+												</div>
+												<div class="clearfix"></div>
+												<div class="form-group mb-2 col-md-12">
+													<button type="button" class="btn btn-pink  mb-2m mt-3 mb-3"
+														id='dashboard_manager_next_button'>
+														Next
+													</button>
+												</div>
+												<ul class="list-unstyled list-inline" id="manager-chips">
+											</div>
+											<div class="clearfix"></div>
+											</ul>
+										</div>
+									</div>
+								</details>
+								<details class="mk-stepper-step">
+									<summary class="mk-stepper-step__header"><span class="mk-stepper-step__icon"
+											id='icon-3'>3</span><span class="mk-stepper-step__label"><a
+												class="card-title">
+												<h3 class="float-left title-font">Panel Participants</h3>
+											</a></span>
+									</summary>
+									<div class="mk-stepper-step__body">
+										<div>
+											<div class="form-inline customForm row">
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-user"></i>
+													<input type="text" class="form-control" placeholder="First Name"
+														id="participant_fn">
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-user"></i>
+													<input type="text" class="form-control" placeholder="Last Name"
+														id="participant_ln">
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<i class="fa fa-envelope"></i>
+													<input type="text" class="form-control" placeholder="Email"
+														id="participant_mail">
+												</div>
+												<div class="form-group mb-2 col-md-3">
+													<button type="submit" class="btn btn-pink mb-2m mt-3 mb-3"
+														id="add-participant">
+														Add
+													</button>
+												</div>
+												<div class="form-group mb-2 col-md-12">
+													<button type="button" class="btn btn-pink mb-2m mt-3 mb-3"
+														id='dashboard_panel_next_button'>
+														Next
+													</button>
+												</div>
+												<ul class="list-unstyled list-inline" id='panel-chips'> </ul>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</details>
+								<details class="mk-stepper-step">
+									<summary class="mk-stepper-step__header"><span class="mk-stepper-step__icon"
+											id='icon-4'>4</span><span class="mk-stepper-step__label">
+											<h3 class="title-font">Interview Questions</h3>
+										</span>
+									</summary>
+									<div class="mk-stepper-step__body">
+										<div>
+											<div class="form-inline customForm row">
+												<div class="form-group mb-2 col-md-8">
+													<input type="text" class="form-control question-panel"
+														placeholder="New Question" id='question'>
+												</div>
+
+												<div class="form-group col-md-12">
+													<button type="button" class="btn btn-pink mb-2m mt-3"
+														id='add-question'>
+														Add
+													</button>
+													<button type="button" class="btn btn-pink mb-2m mt-3"
+														id='save-question'>
+														Save
+													</button>
+												</div>
+												<div class="form-group col-md-12 mt-3">
+													<div class="table-responsive">
+														<table class="table table-hover table-striped" id="table"
+															style="border: 1px solid #d5cdcd; border-collapse: initial;">
+															<thead>
+																<tr>
+																	<th>Question</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody id="queston-preview">
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<button type="button" class="btn btn-pink u-margin-center mb-2m mt-3"
+										id='manager-dashboard-submit'>
+										Submit
+									</button>
+								</details>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="mb-4 manager-view">
+							<div class="card-header" style="width: 100%; border-bottom: 0px;">
+								<div style="width: 70%; float: left;">
+									<a class="card-title">
+										<h1 class="float-left title-font" id="title-Name"
+											style="width: 100%; text-align: right;padding-right: 20%;">All Candidates
+										</h1>
+									</a>
+								</div>
+								<div style="width: 30%; float: right; text-align: right;">
+									<label class="title-font" id="title-Name">Search </label>
+									<input type="text" id="searchCandidate" class="form-control companyName">
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div id="collapseOne" class="card-body show" style="padding: 0px;">
+								<div id="company-information" class="card-wrap" style="padding: 0">
+									<div class="table-responsive">
+										<table id="interview-table" class="table table-hover table-striped paymentTable"
+											style="display: none;">
+											<thead>
+												<tr>
+													<th> </th>
+													<th> Name</th>
+													<th> Job Title</th>
+													<th> Status</th>
+													<th> Date</th>
+													<th class="text-center notprint"> Picture</th>
+													<th style="text-align: right;"> Score</th>
+												</tr>
+											</thead>
+											<tbody id='candidate-table'>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="footer"></div>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="exampleModalLabel">View Inteview Grid</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+					<h1> View Inteview Grid</h1>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-success">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="exampleModalLabel2">Archive Candidate</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+					<h1> Archive Candidate</h1>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-success">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="/public/assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/public/assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/public/assets/plugin/datatable/jquery.dataTables.min.js" type="text/javascript"></script>
+	<script src="/public//assets/plugin/datatable/buttons/dataTables.buttons.min.js" type="text/javascript"></script>
+	<script src="/public//assets/plugin/datatable/buttons/buttons.print.min.js" type="text/javascript"></script>
+	<script src="/public/assets/js/jquery-confirm.min.js"></script>
+	<script src="/public/assets/js/jquery.mask.min.js"></script>
+	<script src="/public/assets/js/notify.min.js"></script>
+	<script src="/public/assets/js/bootstrap-select.min.js"></script>
+	<script src="/public/assets/js/login.js"></script>
+</body>
+<script>
+	$(document).ready(function () {
+		let managerToken = localStorage.getItem('m_token');
+		let adminKey = localStorage.getItem('adminKey');
+		if (!adminKey && !managerToken) {
+			window.location.href = '/login';
+		}
+		
+		var data = {};
+		data['candidate'] = [];
+		data['panel'] = [];
+		data['managers'] = [];
+		data['question_bank'] = {}
+		data['question_bank']['test'] = []
+		$('#header').load('../public/views/header.html');
+		$('#footer').load('../public/views/footer.html');
+		getInterviewData()
+		let managerJob = [];
+		let managerDepartment = [];
+		let managerData = [];
+		let admindata = {};
+		const loadingMessage = '<div class=\'messageCard\'> Creating interview invitation</div>'
+		$('#Information_click').click(() => {
+			$('#Interview-table').show()
+			$('#CreatInteview').toggle()
+			getManager()
+		})
+		$('#save-question').hide();
+		sessionStorage.setItem('isArchive', true);
+
+		function getInterviewData(isArchive = true) {
+			$.ajax({
+				type: 'GET',
+				url: `/manager/candidates/information/${isArchive}`,
+				headers: setAuthenticationHeader(),
+				success: function (data) {
+
+					if (!data.status) {
+						$.notify(data.message)
+					} else {
+						if (data.data.length > 0) {
+							var html = '';
+							for (let index = 0; index < data.data.length; index++) {
+								const result = data.data[index];
+								var e = result['candidate-data'];
+								if (result.archive) {
+									html += '<tr style="background-color: #b59f9f;">';
+								} else {
+									html += '<tr>';
+								}
+								html += '<td>';
+								html += "<div class='form-check'>";
+								html += "<input type='checkbox' class='form-check-input chkCandidate' value='" + result.token + "'/>";
+								html += '</div>';
+								html += '</td>';
+
+								if (e.status && e.status.toLowerCase() === 'completed') {
+									html += "<td class='clickable' onClick=goToCandidateInterview(\"" + result.token + '")><strong>' + e.first_name + '  ' + e.last_name + ' </strong></td>';
+								} else {
+									html += "<td  style='text-transform: capitalize;'><strong>" + e.first_name + '  ' + e.last_name + '</strong></td>';
+								}
+								if (e.role) {
+									html += "<td class='clickable' onClick=goToJob(\"" + e.role + '")><strong>' + e.role.replace(/_/g, ' ') + '</strong></td>';
+								} else {
+									html += "<td class='clickable'></td>"
+								}
+								if (e.status && e.status.toLowerCase() === 'completed') {
+									html += "<td style='text-transform:capitalize;'><span class='label' style='background-color:#63c1c5'>" + 'SUBMITTED' + '</span></td>'
+								} else if (e.status && e.status.toLowerCase() === 'declined') {
+									html += "<td style='text-transform:capitalize;'><span class='label' style='background-color:#df5063'>" + 'DECLINED' + '</span></td>'
+								} else if (e.status && e.status.toLowerCase() === 'started') {
+									html += "<td style='text-transform:capitalize;'><span class='label' style='background-color:#1a1919'>" + 'IN PROGRESS' + '</span></td>'
+								} else {
+									html += "<td style='text-transform:capitalize;'><span class='label' style='background-color:#515594'>" + 'INVITED' + '</span></td>'
+								}
+								html += '<td>' + formatAMPM(new Date(e.completedOn)) + '</td>';
+
+								const img = e.profileImage ? e.profileImage : '/public/assets/img/little_monster.png'
+								html += `<td class='text-center notprint'><img class='img img-center img-candidate' src='${img}' alt='${e.first_name}'/></td>`;
+
+								if (result.rating !== undefined && result.rating > 0) {
+									html += "<td style='text-align:right; padding-right:30px'>" + result.rating + '</td>'
+								} else {
+									html += "<td style='text-align:right; padding-right:30px'>0</td>"
+								}
+								html += "</tr>";
+							}
+							$('#interview-table').show();
+							if ($.fn.DataTable.isDataTable('#interview-table')) {
+								$('#interview-table').DataTable().clear().destroy();
+							}
+
+							$('#candidate-table').html(html);
+
+							var table = $('#interview-table').DataTable({
+								bFilter: true,
+								dom: 'Bfrtip',
+								buttons: [
+
+									{
+										extend: 'print',
+										className: 'btn btn-cancel float-left mr-2 mb-4',
+										exportOptions: {
+											columns: [0, 1, 2, 3, 4, 6],
+										},
+									},
+								],
+								'order': [[1, 'asc']],
+								'columnDefs': [
+									{ 'targets': [0], 'bSortable': false, 'bSearchable': false },
+									{ 'targets': [1] },
+									{ 'targets': [2], 'bSearchable': false },
+									{ 'targets': [3], 'bSearchable': false },
+									{ 'targets': [4], 'bSearchable': false },
+									{ 'targets': [5], 'bSortable': false, 'bSearchable': false },
+									{ 'targets': [6], 'bSearchable': false },
+								],
+
+							});
+							table.buttons().container().appendTo($('#printbtn'));
+						} else {
+							if (!$('#nocandidate').length) {
+								$('#interview-table').after('<p id="nocandidate" class="nocandidate">No candidates found</p>')
+							}
+						}
+					}
+				}
+
+			})
+		}
+		$('#searchCandidate').on('change keyup paste mouseup', function (e) {
+			e.preventDefault();
+			$('#interview-table').DataTable().search($(this).val()).draw();
+		});
+		function formatAMPM(date) {
+
+			var month = parseInt(date.getMonth()) + parseInt(1);
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var ampm = hours >= 12 ? 'PM' : 'AM';
+			hours = hours % 12;
+			hours = hours || 12;
+			minutes = minutes < 10 ? '0' + minutes : minutes;
+			return `${month}/${date.getDate()}/${date.getFullYear()} ${hours}:${minutes} ${ampm}`;
+		}
+		$('#manager-dashboard-submit').click(() => {
+			$.ajax({
+				url: '/manager-added-interview',
+				data: JSON.stringify(data),
+				type: 'POST',
+				headers: setAuthenticationHeader(),
+				contentType: 'application/json',
+				success: function (data) {
+					if (data.status) {
+						$.notify(data.message, 'success');
+						setTimeout(function () { location.reload(); }, 2000);
+					} else {
+						$.notify(data.message, { type: 'danger' });
+					}
+
+				}
+			})
+		})
+
+		$('#save-question').hide();
+		sessionStorage.setItem('isArchive', true);
+
+		$('#question').keyup(function (e) {
+			if (e.keyCode === 13) {
+				$('#add-question').trigger('click', 'add');
+			}
+		});
+
+		$('#add-question').click(() => {
+			if ($('#question').val()) {
+				if ($('#job_title').val() == null || $('#job_title').val() === '') {
+					return $.notify('Enter job detail')
+				}
+			}
+			else {
+				return $.notify(' Please Enter Question')
+			}
+			data['question_bank']['department'] = $('#job_title').val().replace(/ /gi, '_')
+			data['question_bank']['test'].push({ question: $('#question').val() })
+			bindQuestion()
+			$('#question').val('').focus()
+			$('#icon-4').html('<i class="fa fa-check"></i>');
+
+		})
+		function bindQuestion() {
+			$('#queston-preview').empty()
+			if (data['question_bank']['test'].length > 0) {
+				var html = ''
+				for (let i = 0; i < data['question_bank']['test'].length; i++) {
+					const question = data['question_bank']['test'][i]
+					html += '<tr ondblclick="editQuestion(\'' + i + '\')">'
+					html += '<td>' + question.question + '</td>'
+					html += '<td><button type="button" title="Remove Question" class="btn btn-danger" style="min-width: 0px;" onclick="removeQuestion(\'' + i + '\')"><i class="fa fa-trash"></i></button></td>';
+					html += '</tr>';
+				}
+				$('#queston-preview').append(html);
+			}
+		}
+		editQuestion = function (i) {
+			editindex = i;
+			$('#add-question').hide();
+			$('#save-question').show();
+			const datas = data['question_bank']['test'][i]
+			$('#question').val(datas.question);
+		}
+		$('#save-question').click(function (err) {
+			const question = $('#question').val();
+			const i = editindex || '';
+			if (i) {
+				data['question_bank']['test'][i].question = question;
+				bindQuestion();
+				$('#question').val('');
+				$('#add-question').show();
+				$('#save-question').hide();
+				editindex = '';
+			}
+		})
+		removeQuestion = function (i) {
+			$.confirm({
+				title: 'PLEASE CONFIRM?',
+				content: 'Are you sure you want to remove question?',
+				type: 'red',
+				draggable: false,
+				typeAnimated: true,
+				buttons: {
+					Confirm: {
+						text: 'Delete',
+						btnClass: 'btn-red',
+						action: function () {
+							data.question_bank.test.splice(i, 1);
+							bindQuestion();
+						},
+					},
+					cancel: {
+						text: 'Cancel',
+						btnClass: 'btn-green',
+					},
+				},
+			});
+		}
+
+
+		$('#dashboard_candidate_add_button').click(function () {
+			const firstName = $('#dashboard_candidate_first_name').val();
+			const lastName = $('#dashboard_candidate_last_name').val();
+			const email = $('#dashboard_candidate_email').val();
+
+			if (!firstName || !lastName || !email) {
+				if (data['candidate'].length > 0) {
+					return;
+				}
+				return $.notify('Enter all candidate field');
+			}
+
+			if (!validateEmail(email)) {
+				return $.notify('Enter valid email');
+			}
+
+			const checkEmailExist = data['candidate'].filter(x => x.email === email);
+			if (checkEmailExist && checkEmailExist.length > 0) {
+				$.notify('Email already exist');
+				$('#dashboard_candidate_email').val('');
+				return;
+			}
+
+			data['candidate'].push({ first_name: firstName, last_name: lastName, email: email });
+			bindCandidate();
+
+			$('#dashboard_candidate_first_name').val('').focus();
+			$('#dashboard_candidate_last_name').val('');
+			$('#dashboard_candidate_email').val('');
+
+		});
+
+		$('#dashboard_candidate_first_name, #dashboard_candidate_last_name, #dashboard_candidate_email').keyup(function (e) {
+			if (e.keyCode === 13) {
+				$('#dashboard_candidate_add_button').trigger('click', 'add');
+			}
+		});
+
+		$('#dashboard_candidate_next_button').click(() => {
+			$('#dashboard_candidate_add_button').trigger('click', 'next');
+			if (data['candidate'].length > 0) {
+				if ($('#icon-2').parent().parent().attr('open') !== 'open') {
+					$('#icon-1').html('<i class="fa fa-check"></i>');
+					$('#icon-2').next().trigger('click');
+				}
+				$('#dashboard_candidate_add_button')[0].scrollIntoView(true);
+				$('#dashboard_manager_first_name').focus();
+			}
+		})
+		$('#job_title').change(function () {
+			if (data['question_bank']['test'].length > 0) {
+				data['question_bank']['test'] = data['question_bank']['test'].filter(x => x.type !== 'department')
+				data['question_bank']['test'] = data['question_bank']['test'].filter(x => x.type !== 'jobtitle')
+			}
+			data['question_bank']['department'] = $('#job_title').val().replace(/ /gi, '_');
+
+			bindDepartment();
+			bindJobQuestion();
+			bindQuestion();
+		});
+
+		function bindJobQuestion() {
+			if (managerJob.length > 0) {
+				const getJobTitle = managerJob.filter(x => x.title === $('#job_title').val());
+
+				if (getJobTitle.length > 0) {
+					const getQuestions = getJobTitle[0].questions;
+					if (getQuestions && getQuestions.length > 0) {
+						for (let index = 0; index < getQuestions.length; index++) {
+							const question = getQuestions[index];
+							data['question_bank']['test'].push({ question: question.question, given_time: question.time, type: 'jobtitle' })
+							$('#queston-preview').append(`<div>${question.question} : ${question.time}<br></div>`);
+						}
+					}
+				}
+			}
+		}
+		function bindDepartment() {
+			if (managerDepartment.length > 0) {
+				const getDepartmentQuestion = managerDepartment.filter(x => x.name === $('#department_name').val());
+				if (getDepartmentQuestion.length > 0) {
+					const getQuestions = getDepartmentQuestion[0].questions;
+					if (getQuestions && getQuestions.length > 0) {
+						for (let index = 0; index < getQuestions.length; index++) {
+							const question = getQuestions[index];
+							data['question_bank']['test'].push({ question: question.question, given_time: question.time, type: 'department' })
+							$('#queston-preview').append(`<div>${question.question} : ${question.time}<br></div>`);
+						}
+					}
+				}
+			}
+
+		}
+
+		function bindCandidate() {
+			$('#candidate-chips').empty();
+			if (data['candidate'].length > 0) {
+				var html = '';
+				for (let index = 0; index < data['candidate'].length; index++) {
+					const candidate = data['candidate'][index];
+					html += '<li class="chips" onClick=removeCandidate(\'' + candidate.email + '\')>';
+					html += '<span class="img"><i class="fa fa-user"></i> </span>';
+					html += '<span class="text"> ' + candidate.first_name + ' ' + candidate.last_name + ' </span>';
+					html += '<span class="cut"><i class="fa fa-times"></i> </span>';
+					html += '</li>';
+				}
+				$('#candidate-chips').append(html);
+			}
+		}
+
+		removeCandidate = function (email) {
+			$.confirm({
+				title: 'PELASE CONFIRM',
+				content: 'Are you sure you want to remove candidate?',
+				type: 'red',
+				draggable: false,
+				typeAnimated: true,
+				buttons: {
+					Confirm: {
+						text: 'Delete',
+						btnClass: 'btn-red',
+						action: function () {
+							data['candidate'] = data['candidate'].filter(x => x.email !== email);
+							bindCandidate();
+						},
+					},
+					cancel: {
+						text: 'Cancel',
+						btnClass: 'btn-green',
+					},
+				},
+			});
+		}
+
+
+		$('#add-participant').click(function () {
+			const participantFirstName = $('#participant_fn').val();
+			const participantLastName = $('#participant_ln').val();
+			const participantEmail = $('#participant_mail').val();
+
+			if (!participantFirstName || !participantLastName || !participantEmail) {
+				if (data['panel'].length > 0) { return; }
+				return $.notify('Enter Panel Participant');
+			}
+
+			if (!validateEmail(participantEmail)) {
+				return $.notify('Enter valid participant email');
+			}
+
+			const checkEmailExist = data['panel'].filter(x => x.email === participantEmail);
+			if (checkEmailExist && checkEmailExist.length > 0) {
+				$.notify('Email already exist');
+				$('#participant_mail').val('');
+				return;
+			}
+
+			data['panel'].push({ firstName: participantFirstName, lastName: participantLastName, email: participantEmail });
+			bindPanel();
+			$('#participant_fn').val('');
+			$('#participant_ln').val('');
+			$('#participant_mail').val('');
+			$('#participant_fn').focus();
+		});
+
+		goToCandidateInterview = function (token) {
+			window.location.href = '/single-candidate/' + token;
+		}
+
+		goToJob = function (jobTitle) {
+			window.location.href = '/multiple-candidate/' + jobTitle
+		}
+
+
+		function bindPanel() {
+			$('#panel-chips').empty();
+			if (data['panel'].length > 0) {
+				var html = '';
+				for (let index = 0; index < data['panel'].length; index++) {
+					const panel = data['panel'][index];
+					html += '<li class="chips" onClick=removePanel(\'' + panel.email + '\')>';
+					html += '<span class="img"><i class="fa fa-user"></i> </span>';
+					html += '<span class="text"> ' + panel.firstName + ' ' + panel.lastName + ' </span>';
+					html += '<span class="cut"><i class="fa fa-times"></i> </span>';
+					html += '</li>';
+				}
+				$('#panel-chips').append(html);
+			}
+		}
+
+
+		$('#dashboard_panel_next_button').click(() => {
+			const participantFirstName = $('#participant_fn').val();
+			const participantLastName = $('#participant_ln').val();
+			const participantEmail = $('#participant_mail').val();
+
+			if (participantFirstName || participantLastName || participantEmail) {
+				$('#add-participant').trigger('click');
+			}
+
+			if ($('#icon-4').parent().parent().attr('open') !== 'open') {
+				$('#icon-3').html('<i class="fa fa-check"></i>');
+				$('#icon-4').next().trigger('click');
+			}
+			$('#dashboard_panel_next_button')[0].scrollIntoView(true);
+			$('#question').focus();
+		})
+
+		removePanel = function (email) {
+			$.confirm({
+				title: 'PLEASE CONFIRM',
+				content: 'Are you sure you want to remove panel participant?',
+				type: 'red',
+				draggable: false,
+				typeAnimated: true,
+				buttons: {
+					Confirm: {
+						text: 'Delete',
+						btnClass: 'btn-red',
+						action: function () {
+							data['panel'] = data['panel'].filter(x => x.email !== email);
+							bindPanel();
+						},
+					},
+					cancel: {
+						text: 'Cancel',
+						btnClass: 'btn-green',
+					},
+				},
+			});
+		}
+		$('#dashboard_manager_email2').on('change', function () {
+			const email = $('#dashboard_manager_email2').val();
+			const manager = managerData.filter(x => x.email === email);
+			if (manager && manager.length > 0) {
+				data['question_bank']['test'] = data['question_bank']['test'].filter(x => x.type !== 'Manager');
+				for (let index = 0; index < manager[0].questions.length; index++) {
+					const question = manager[0].questions[index];
+					data['question_bank']['test'].push({ question: question.question, given_time: question.time, type: 'Manager' })
+				}
+				bindManagerQuestion()
+				bindQuestion();
+				$('#dashboard_manager_first_name').val(manager[0].firstname);
+				$('#dashboard_manager_last_name').val(manager[0].lastname);
+			} else if (admindata) {
+
+				if (admindata.data['email'] === email) {
+					$('#dashboard_manager_first_name').val(admindata.data.firstname);
+					$('#dashboard_manager_last_name').val(admindata.data.lastname);
+				}
+			}
+		});
+
+		let managerdata;
+		getManager = function () {
+
+			$.ajax({
+				url: "/getManager",
+				type: 'GET',
+				headers: setAuthenticationHeader(),
+				success: function (data) {
+					if (data.status === true) {
+
+						const result = data.data
+						if (result.user) {
+							const user = result.user;
+							managerdata = user;
+							admindata = user;
+
+							$('#dashboard_manager_first_name').val(user.data.firstname)
+							$('#dashboard_manager_last_name').val(user.data.lastname)
+
+							if (result.user.type === 'admin') {
+								$('#email1').hide();
+								$('#dashboard_manager_first_name').attr('readonly', true);
+								$('#dashboard_manager_last_name').attr('readonly', true);
+								$('#dashboard_manager_email2').append($('<option>').text(user.data.email).attr('value', user.data.email));
+							} else {
+								$('#managermail').hide();
+								$('#email1').show();
+								$('#dashboard_manager_first_name').attr('readonly', true);
+								$('#dashboard_manager_last_name').attr('readonly', true);
+								$('#dashboard_manager_email').val(user.data.email);
+							}
+						}
+						if (result.managerdata) {
+							$('#dashboard_manager_last_name2').empty();
+							managerData = result.managerdata;
+							if (result.managerdata.length > 0 && result.user.type === 'admin') {
+								const manager = result.managerdata;
+								$.each(manager, function (_index, value) {
+									if (value.registration_status === 'REGISTERED' && value.isDeleted !== true && result.user.email !== value.email) {
+										$('#dashboard_manager_email2').append($('<option>').text(value.email).attr('value', value.email));
+									}
+								});
+							}
+						}
+						$('#department_name').empty();
+
+						if (result.departmentResult.length > 0) {
+							const departments = managerDepartment = result.departmentResult[0].departments;
+							$('#department_name').append($('<option>').text('-- Select Department --'));
+							$.each(departments, function (_index, value) {
+								$('#department_name').append($('<option>').text(value.name).attr('value', value.name));
+							});
+						}
+
+						if (result.jobTitleResult.length > 0) {
+							managerJob = result.jobTitleResult[0]['job-title']
+						}
+						bindManagerQuestion(result);
+
+					}
+				}
+			})
+
+		}
+
+		function bindManagerQuestion(result) {
+			if (result.questions && result.questions.length > 0) {
+				for (let index = 0; index < result.questions.length; index++) {
+					const question = result.questions[index];
+					data['question_bank']['test'].push({ question: question.question, given_time: question.time })
+				}
+				bindQuestion();
+			}
+		}
+
+		$('#department_name').change(function () {
+			const jobTitles = managerJob.filter(x => x.department === $('#department_name').val());
+			$('#job_title').empty();
+			$('#job_title').append($('<option>').text('-- Select Job Title --'));
+
+			$.each(jobTitles, function (index, value) {
+				$('#job_title').append($('<option>').text(value.title).attr('value', value.title));
+			});
+			data['question_bank']['department'] = '';
+			if (data['question_bank']['test'].length > 0) {
+				data['question_bank']['test'] = data['question_bank']['test'].filter(x => x.type !== 'department')
+				data['question_bank']['test'] = data['question_bank']['test'].filter(x => x.type !== 'jobtitle')
+			}
+
+			bindQuestion();
+		});
+
+		$('#dashboard_manager_next_button').click(() => {
+			$('#dashboard_manager_add_button').trigger('click');
+			if (data['managers'].length > 0) {
+				if ($('#icon-3').parent().parent().attr('open') !== 'open') {
+					$('#icon-2').html('<i class="fa fa-check"></i>');
+					$('#icon-3').next().trigger('click');
+				}
+				$('#dashboard_manager_next_button')[0].scrollIntoView(true);
+				$('#participant_fn').focus();
+			}
+		})
+
+		$('#dashboard_manager_add_button').click(function () {
+			const managerFirstName = $('#dashboard_manager_first_name').val();
+			const managerLastName = $('#dashboard_manager_last_name').val();
+			const email1 = $('#dashboard_manager_email').val();
+			const email2 = $('#dashboard_manager_email2').val();
+			const managerEmail = email1 || email2;
+			const department = $('#department_name').val();
+			const title = $('#job_title').val();
+			if (data.managers.length === 0) {
+				if (!managerFirstName || !managerLastName || !managerEmail || !title || !department) {
+					if (data['managers'].length > 0) { return; }
+					return $.notify('Enter all manager field');
+				}
+
+				if (!validateEmail(managerEmail)) {
+					return $.notify('Enter valid email');
+				}
+
+				if (department === '-- Select Department --') {
+					return $.notify('Select valid department');
+				}
+
+				if (title === '-- Select Job Title --') {
+					return $.notify('Select valid job title');
+				}
+
+				const checkEmailExist = data['managers'].filter(x => x.email === managerEmail);
+				if (checkEmailExist && checkEmailExist.length > 0) {
+					$.notify('Email already exist');
+					const email1 = $('#dashboard_manager_email').val('');
+					const email2 = $('#dashboard_manager_email2').val('');
+					const email = email1 || email2
+					return email;
+				}
+
+				data['managers'].push({ first_name: managerFirstName, last_name: managerLastName, email: managerEmail, department: department, jobTitle: title });
+			}
+
+			bindManager();
+			$('#dashboard_manager_add_button').attr('disabled', true);
+			$('#dashboard_manager_first_name').val('');
+			$('#dashboard_manager_last_name').val('');
+			$('#dashboard_manager_email2').val('');
+			$('#dashboard_manager_email').val('');
+		});
+
+
+
+
+		function bindManager() {
+			$('#manager-chips').empty();
+			if (data['managers'].length > 0) {
+				var html = '';
+				for (let index = 0; index < data['managers'].length; index++) {
+					const manager = data['managers'][index];
+					html += '<li class="chips" onClick=removeManager(\'' + manager.email + '\')>';
+					html += '<span class="img"><i class="fa fa-user"></i> </span>';
+					html += '<span class="text"> ' + manager.first_name + ' ' + manager.last_name + ' </span>';
+					html += '<span class="cut"><i class="fa fa-times"></i> </span>';
+					html += '</li>';
+				}
+				$('#manager-chips').append(html);
+			}
+			if (managerdata.type === 'manager') {
+				$('#dashboard_manager_first_name').val(managerdata.first_name);
+				$('#dashboard_manager_last_name').val(managerdata.last_name);
+				$('#dashboard_manager_email').val(managerdata.email);
+			}
+		}
+
+		removeManager = function (email) {
+			$.confirm({
+				title: 'PLEASE CONFIRM',
+				content: 'Are you sure you want to remove manager?',
+				type: 'red',
+				draggable: false,
+				typeAnimated: true,
+				buttons: {
+					Confirm: {
+						text: 'Delete',
+						btnClass: 'btn-red',
+						action: function () {
+							data['managers'] = data['managers'].filter(x => x.email !== email);
+							$('#dashboard_manager_add_button').removeAttr('disabled');
+							bindManager();
+						},
+					},
+					cancel: {
+						text: 'Cancel',
+						btnClass: 'btn-green',
+					},
+				},
+			});
+		}
+
+		function validateEmail(email) {
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+		}
+
+
+		$('#showArchiveCandidate').click(function () {
+			getInterviewData(false);
+			sessionStorage.setItem('isArchive', false);
+
+		});
+
+		$('#archiveCandidate').click(function () {
+			var allCandidate = [];
+			$.each($('.chkCandidate:checked'), function () {
+				allCandidate.push($(this).val());
+			});
+			const getAllCandidates = allCandidate.join(', ');
+			const data = { candidates: getAllCandidates };
+
+			$.ajax({
+				type: 'POST',
+				url: '/archiveCandidate',
+				data: JSON.stringify(data),
+				headers: setAuthenticationHeader(),
+				"contentType": "application/json",
+				success: function (data) {
+					if (data.status === true) {
+						$.notify(data.message, 'success');
+						$('#interview-table').dataTable().fnDestroy()
+						getInterviewData();
+					} else {
+						$.notify(data.message)
+					}
+				},
+			});
+		});
+
+		$('#deleteCandidate').click(function () {
+			var allCandidate = [];
+			$.each($('.chkCandidate:checked'), function () {
+				allCandidate.push($(this).val());
+
+			});
+			const getAllCandidates = allCandidate.join(', ');
+			const data = { candidates: getAllCandidates }
+
+			$.ajax({
+				type: 'POST',
+				url: '/deleteCandidate',
+				data: JSON.stringify(data),
+				headers: setAuthenticationHeader(),
+				"contentType": "application/json",
+				success: function (data) {
+					if (data.status === true) {
+						$.notify(data.message, 'success');
+						$('#interview-table').dataTable().fnDestroy()
+						location.reload(true);
+						getInterviewData();
+					} else {
+						$.notify(data.message)
+					}
+				},
+			});
+		});
+
+
+	})
+</script>
+
+</html>

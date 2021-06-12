@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'SegoeUI-Semibold';
+  src: url('SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg'),
+       url('SegoeUI-Semibold.ttf') format('truetype'),
+       url('SegoeUI-Semibold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'seguisb';
+  src: url('seguisb.eot');
+  src: url('seguisb.eot?#iefix') format('embedded-opentype'),
+       url('seguisb.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

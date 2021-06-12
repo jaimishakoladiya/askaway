@@ -1,0 +1,1628 @@
+/*============----------------Font family start here----------------====================*/
+
+@font-face {
+  font-family: "Segoe UI-light";
+  src: url("../fonts/SegoeUI-Light.eot");
+  src: url("../fonts/SegoeUI-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SegoeUI-Light.woff2") format("woff2"),
+    url("../fonts/SegoeUI-Light.woff") format("woff"),
+    url("../fonts/SegoeUI-Light.ttf") format("truetype"),
+    url("../fonts/SegoeUI-Light.svg#SegoeUI-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI-black";
+  src: url("../fonts/SegoeUIBlack.eot");
+  src: url("../fonts/SegoeUIBlack.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SegoeUIBlack.woff2") format("woff2"),
+    url("../fonts/SegoeUIBlack.woff") format("woff"),
+    url("../fonts/SegoeUIBlack.ttf") format("truetype"),
+    url("../fonts/SegoeUIBlack.svg#SegoeUIBlack") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI-normal";
+  src: url("../fonts/SegoeUI.eot");
+  src: url("../fonts/SegoeUI.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SegoeUI.woff2") format("woff2"),
+    url("../fonts/SegoeUI.woff") format("woff"),
+    url("../fonts/SegoeUI.ttf") format("truetype"),
+    url("../fonts/SegoeUI.svg#SegoeUI") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI-bold";
+  src: url("../fonts/SegoeUI-Bold.eot");
+  src: url("../fonts/SegoeUI-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SegoeUI-Bold.woff2") format("woff2"),
+    url("../fonts/SegoeUI-Bold.woff") format("woff"),
+    url("../fonts/SegoeUI-Bold.ttf") format("truetype"),
+    url("../fonts/SegoeUI-Bold.svg#SegoeUI-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Semilight";
+  src: url("../fonts/SegoeUI-Semilight.eot");
+  src: url("../fonts/SegoeUI-Semilight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SegoeUI-Semilight.woff2") format("woff2"),
+    url("../fonts/SegoeUI-Semilight.woff") format("woff"),
+    url("../fonts/SegoeUI-Semilight.ttf") format("truetype"),
+    url("../fonts/SegoeUI-Semilight.svg#SegoeUI-Semilight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI bold";
+  src: url("../fonts/segoe/SegoeUI-Bold.eot");
+  src: url("../fonts/segoe/SegoeUI-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/segoe/SegoeUI-Bold.woff2") format("woff2"),
+    url("../fonts/segoe/SegoeUI-Bold.woff") format("woff"),
+    url("../fonts/segoe/SegoeUI-Bold.ttf") format("truetype"),
+    url("../fonts/segoe/SegoeUI-Bold.svg#SegoeUI-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe Semibold";
+  src: url("../fonts/Segoe-semibold/SegoeUI-Semibold.eot");
+  src: url("../fonts/Segoe-semibold/SegoeUI-Semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Segoe-semibold/SegoeUI-Semibold.ttf") format("truetype"),
+    url("../fonts/Segoe-semibold/SegoeUI-Semibold.svg#SegoeUI-Bold")
+      format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SegoeUIBlack";
+  src: url("../fonts/segoe/SegoeUIBlack.svg#SegoeUIBlack") format("svg"),
+    url("../fonts/segoe/SegoeUIBlack.ttf") format("truetype"),
+    url("../fonts/segoe/SegoeUIBlack.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/helvetica-light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "DIN";
+  src: url("../fonts/DIN-Bold.ttf");
+  font-weight: 700;
+}
+/*============----------------Font family End here----------------====================*/
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica";
+  background-color: #eef5f6;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica";
+}
+h4{
+  font-weight: bold;
+  text-align: left;
+  font-size: 40px;
+}
+.pt-10 {
+  padding-top: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-30 {
+  padding-top: 30px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pt-50 {
+  padding-top: 50px;
+}
+.pb-50 {
+  padding-bottom: 50px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.m-0 {
+  margin: 0px !important;
+}
+.pl-0 {
+  margin-left: 0px !important;
+}
+.mb-5 {
+  margin-bottom: 2rem !important;
+}
+ul {
+  padding-left: 18px;
+}
+p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/*============----------------Description page style start here----------------====================*/
+.rules{
+  text-align: left;
+  font-size: 20px;
+  font-family: "Helvetica"
+}
+img.img-fluid.medium {
+  width: 16%;
+}
+ul.list-unstyled.password {
+  margin-top: 28px;
+  box-shadow: 0px 0px 20px -6px;
+  padding: 14px;
+}
+.interview {
+  background-image: url(../images/first-bg.jpg);
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 11%;
+  padding-left: 5%;
+}
+.navbar-brand img {
+  /* width: 20%; */
+  height: 45px;
+  margin-left: 0;
+}
+a.navbar-brand {
+  display: contents;
+  float: left;
+}
+p {
+  font-size: 1rem;
+}
+nav.navbar.navbar-default.navbar-fixed-top {
+  z-index: 1;
+}
+
+.description {
+  color: #fff;
+}
+.footer p {
+  font-size: 0.8rem;
+}
+
+/*============----------------Description page style End here----------------====================*/
+
+.instruction {
+  background-image: url(../images/sec-bg.jpg);
+  height: 728px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 15%;
+  padding-left: 5%;
+  padding-bottom: 82px;
+}
+.instruction img.img-fluid {
+  position: relative;
+  bottom: -91px;
+}
+.instruction li {
+  font-size: 14px;
+  color: white;
+}
+.instruction .description {
+  color: #fff;
+  margin-top: -40px;
+}
+label.form-check-label {
+  padding-top: 20px;
+  color: #fff;
+}
+
+.tab-pane {
+  box-shadow: 0px 0px 21px -10px;
+  min-height: 320px;
+}
+
+.interview-setup {
+  background-image: url(../images/third-bg.jpg);
+  height: 885px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 11%;
+  padding-left: 5%;
+  width: 100%;
+}
+video {
+  width: 100%;
+  border-radius: 10px !important;
+}
+
+.cube {
+  z-index: 1;
+  position: relative;
+  height: 300px;
+  border-left: 2px solid #63c1c5;
+  border-right: 2px solid #4e90a4;
+  border-top: 2px solid #63c1c5;
+  border-bottom: 2px solid #4e90a4;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 20px;
+  -moz-background-size: 100% 20px;
+  background-size: 100% 20px;
+  background-image: -webkit-linear-gradient(left, #63c1c5 0%, #4e90a4 100%),
+    -webkit-linear-gradient(left, #63c1c5 0%, #4e90a4 100%);
+  background-image: -moz-linear-gradient(left, #63c1c5 0%, #4e90a4 100%),
+    -moz-linear-gradient(left, #63c1c5 0%, #4e90a4 100%);
+  background-image: -o-linear-gradient(left, #63c1c5 0%, #4e90a4 100%),
+    -o-linear-gradient(left, #63c1c5 0%, #4e90a4 100%);
+  background-image: linear-gradient(to right, #63c1c5 0%, #4e90a4 100%),
+    linear-gradient(to right, #63c1c5 0%, #4e90a4 100%);
+  box-shadow: 6px 4px 15px -4px;
+}
+.btn_control {
+  width: 100%;
+  color: #122dff;
+  display: inline-block;
+  font-size: 20px;
+  text-decoration: none;
+  border-left: 2px solid #63c1c5;
+  border-right: 2px solid #4e90a4;
+  border-top: 2px solid #63c1c5;
+  border-bottom: 2px solid #4e90a4;
+  position: relative;
+  padding: 25px 15px;
+  background: #ffff;
+  bottom: 16px;
+  z-index: 0;
+}
+button.btn {
+  font-size: 16px;
+  padding: 14px 36px;
+  font-family: "Helvetica";
+  text-transform: uppercase;
+  outline: none;
+}
+.btn_control span {
+  font-size: 11px;
+}
+h2.main_title b {
+  font-size: 1.7rem;
+}
+.interview-setup .right-bottom {
+  margin-top: 140px;
+}
+
+span.main_question {
+  font-size: 50px;
+  font-weight: bold;
+  float: left;
+  padding-right: 20px;
+  color: #000;
+  line-height: 50px;
+}
+
+.main_title {
+  padding-right: 40px;
+  text-transform: uppercase;
+  font-family: "Segoe UI-black";
+}
+.width-60 {
+  float: left;
+}
+.primary-heading {
+  text-transform: none;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+}
+
+/*============----------Thank you start here----------=============*/
+.thankYou {
+  /* background-image: url(../images/goodBye.jpg); */
+  height: 625px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 11%;
+  padding-left: 5%;
+  width: 100%;
+}
+
+.thankYou-candidate {
+  margin-top: -210px !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #63c1c5;
+  border-color: #5ca7f7;
+}
+/*============----------thankyou end here----------=============*/
+
+/*============----------steps start here----------=============*/
+
+.instruction-new {
+  background: #63c1c5;
+  /* background-image: url(../images/all-steps.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.instruction-new .tab-pane {
+  min-height: 429px;
+  height: 100%;
+  position: relative;
+}
+.admin-steps {
+  background-color: #fff;
+  border-radius: 10px;
+}
+.admin-steps li.nav-item {
+  width: 25%;
+}
+
+a.nav-link.small.text-uppercase {
+  padding: 15px;
+  text-align: center;
+  color: #787474;
+  text-transform: capitalize !important;
+}
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
+}
+a.nav-link.small.text-uppercase.active.show {
+  color: #63c1c5;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: transparent;
+  border-color: transparent;
+}
+.card-body {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+div#tabsJustifiedContent {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+}
+input.formInputs {
+  border: 0;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  border-radius: 0;
+  border-bottom: 1px solid #dadada;
+  font-family: "Helvetica";
+}
+button.btn.btn-success {
+  padding: 8px;
+  font-family: "Segoe UI-bold";
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+  border-bottom: 2px solid #63c1c5 !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+a.nav-link.small.text-uppercase.active.show .img1 {
+  opacity: 0;
+}
+a.nav-link.small.text-uppercase.active.show img.img1 {
+  position: absolute;
+}
+img.img1 {
+  position: absolute;
+}
+img.img {
+  opacity: 0;
+}
+a.nav-link.small.text-uppercase.active.show img.img {
+  opacity: 1;
+}
+.form-group {
+  margin-bottom: 1rem;
+  width: 45%;
+  float: left;
+  padding-right: 20px;
+  margin-left: 16px;
+}
+.btns {
+  padding: 0px 4% 26px;
+}
+div#home1:after {
+  /* old css
+    position: absolute;
+    content: '';
+    background-image: url(../images/admin.png);
+    height: 380px;
+    width: 540px;
+    background-size: 68%;
+    z-index: 99;
+    top: 160px;
+    background-position: right;
+    right: -70px;
+    background-repeat: no-repeat; */
+
+  position: absolute;
+  content: "";
+  background-image: url(../images/admin.png);
+  height: 360px;
+  width: 370px;
+  z-index: 99;
+  bottom: -100px;
+  background-size: 90%;
+  right: -140px;
+  background-repeat: no-repeat;
+}
+div#profile1:after {
+  /* 
+    old css 
+    position: absolute;
+    content: '';
+    background-image: url(../images/contact.png);
+    height: 67%;
+    width: 32%;
+    background-position: right;
+    background-size: 100%;
+    z-index: 99;
+    bottom: -50px;
+    right: -67px;
+    background-repeat: no-repeat;
+    overflow: hidden; */
+
+  position: absolute;
+  content: "";
+  background-image: url(../images/contact.png);
+  height: 360px;
+  width: 370px;
+  z-index: 99;
+  bottom: -100px;
+  right: -140px;
+  background-repeat: no-repeat;
+}
+.thankYou h1.pt-50.text-white {
+  padding-top: 10%;
+}
+.thankYou .description {
+  color: #000;
+  font-size: 20px;
+  padding-right: 0;
+}
+div#messages1:after {
+  position: absolute;
+  content: "";
+  background-image: url(../images/jobInfo.png);
+  height: 360px;
+  width: 370px;
+  z-index: 99;
+  bottom: -100px;
+  right: -140px;
+  background-repeat: no-repeat;
+}
+.dropdown-menu.show {
+  z-index: 999999;
+}
+div#messages2:after {
+  /* old css */
+  /* position: absolute;
+    content: '';
+    background-image: url(../images/summary.png);
+    height: 447px;
+    width: 400px;
+    background-size: 100%;
+    z-index: 0;
+    bottom: -110px;
+    right: -123px;
+    background-position: right;
+    background-repeat: no-repeat; */
+
+  position: absolute;
+  content: "";
+  background-image: url(../images/summary.png);
+  height: 360px;
+  width: 370px;
+  background-size: 100%;
+  z-index: 99;
+  bottom: -100px;
+  right: -140px;
+  background-repeat: no-repeat;
+}
+#popover-password li {
+  font-size: 14px;
+}
+div#messages3:after {
+  position: absolute;
+  content: "";
+  background-image: url(../images/invite.png);
+  height: 60%;
+  width: 67%;
+  background-position: right;
+  background-size: 67%;
+  z-index: 99;
+  top: 260px;
+  right: -50px;
+  background-repeat: no-repeat;
+}
+footer.footer {
+  width: 100%;
+  height: 45px;
+}
+.push {
+  height: 58px;
+}
+#profile1 .form-group {
+  width: 100%;
+}
+td.remove {
+  text-align: center;
+  background: #eaeaea;
+  padding: 3px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+}
+td.remove:hover {
+  background: #63c1c5;
+  color: #fff;
+}
+#messages1 .form-group {
+  width: 100%;
+}
+.cap {
+  text-transform: uppercase;
+  clear: both;
+  padding: 0;
+}
+
+.messages1 p {
+  font-size: 15px;
+  width: 62%;
+  float: left;
+}
+.sizeing input.formInputs {
+  width: 80%;
+  float: left;
+  font-size: 0.8rem;
+}
+.messages1 form {
+  box-shadow: 0px 0px 9px -4px;
+  border-radius: 10px;
+  padding: 15px 15px;
+  margin-top: 0px;
+}
+button.btn.btn-light {
+  padding: 8px 12px;
+  display: inline-block;
+  font-size: 12px;
+  box-shadow: 0px 0px 20px -6px;
+}
+.badge-secondary {
+  margin: 0px 27px;
+  background-color: #6c757d4d;
+  font-family: "DIN";
+}
+
+.half {
+  width: 18%;
+  float: left;
+  margin-top: -20px;
+}
+
+.error .modal-dialog {
+  position: fixed;
+  width: 27%;
+  margin: 0 auto !important;
+  pointer-events: none;
+  bottom: 0;
+  max-width: 100% !important;
+  left: 0;
+  right: 0;
+  top: 25%;
+}
+.modal-header.red {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 9px 20px;
+}
+.modal-header.green {
+  background-color: #3dd063;
+  color: #fff;
+  padding: 9px 20px;
+}
+.modal-header.red .modal-title {
+  font-weight: 500 !important;
+  font-size: 22px;
+}
+#admin-email::placeholder {
+  color: #df5063;
+}
+/*============----------below css is added by shreeketh----------=============*/
+
+.btns {
+  /* padding: 0px 3% 32px; */
+  padding: 1.5rem 4% 26px;
+  top: 39px;
+  width: 100%;
+  z-index: 9999;
+}
+.text-primary {
+  color: #63c1c5 !important;
+  padding-left: 40px;
+}
+#profile1 li {
+  display: inline-block;
+}
+.halfSection {
+  width: 50%;
+  float: left;
+  padding-left: 5px;
+}
+.halfSection p {
+  width: 100%;
+  font-family: "Segoe UI-bold";
+}
+.borderRight {
+  border-right: 1px solid #eee;
+  padding-right: 10px;
+}
+.newSize p {
+  width: 100%;
+  font-weight: 600;
+}
+.position {
+  width: 100% !important;
+}
+.invitation span {
+  width: 100%;
+  float: left;
+  padding-bottom: 10%;
+}
+h6.cap {
+  font-size: 18px;
+  padding-bottom: 3px;
+}
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  position: relative;
+  top: -25px;
+  padding: 0px;
+  font-size: 11px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  z-index: 999;
+  position: relative;
+}
+.chip:hover {
+  background-color: #1393ce26;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.closebtn {
+  padding-left: 10px;
+  color: #888;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: #000;
+}
+
+.btn-light::after {
+  content: "\f0d7";
+  font-style: 12px;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 600;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 42px;
+}
+/*============----------Start css End here----------=============*/
+/*============----------media query start here----------=============*/
+@media (max-width: 900) {
+  div#messages1:after {
+    width: 50%;
+  }
+  .sizeing input.formInputs {
+    width: 100%;
+    float: left;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sizeing input.formInputs {
+    width: 100%;
+    float: left;
+    font-size: 0.8rem;
+  }
+  a.nav-link.small.text-uppercase {
+    padding: 15px;
+  }
+
+  .h5,
+  h5 {
+    font-size: 1rem;
+  }
+  .messages1 th {
+    width: 50% !important;
+  }
+  .card-body {
+    padding: 10px;
+  }
+  .nav-item a img {
+    width: 28px;
+  }
+  .instruction .description {
+    color: #fff;
+    margin-top: 50px;
+  }
+  .instruction img.img-fluid {
+    position: relative;
+    bottom: -21px;
+  }
+  .thankYou-candidate {
+    display: none;
+  }
+  .navbar-brand img {
+    width: 20%;
+    margin-left: 5%;
+  }
+  .thankYou {
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  div#home1:after {
+    display: none;
+  }
+  .instruction-new li p {
+    font-size: 12px;
+  }
+  div#profile1:after {
+    display: none;
+  }
+  div#messages1:after {
+    display: none;
+  }
+  div#messages2:after {
+    display: none;
+  }
+  div#messages3:after {
+    display: none;
+  }
+  h6.cap {
+    font-size: 16px;
+    padding-bottom: 3px;
+  }
+  .form-group {
+    margin-bottom: 0rem;
+    width: 100%;
+    float: left;
+    padding-right: 0px;
+    margin-left: 0;
+  }
+  .instruction-new .tab-pane {
+    max-height: 100%;
+    height: auto;
+  }
+  footer.footer {
+    bottom: auto;
+  }
+}
+@media (max-width: 360px) {
+  .form-group {
+    margin-bottom: 0;
+    width: 100%;
+    float: left;
+    padding-right: 0;
+  }
+  h6.cap {
+    font-size: 15px;
+  }
+  .halfSection {
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 15px;
+  }
+  button.btn {
+    font-size: 12px;
+  }
+  .halfSection p {
+    font-size: 12px;
+  }
+  .text-primary {
+    padding-left: 0px;
+    font-size: 13px;
+  }
+}
+
+/* =================-----------below css id for image and button padding in fast start page -------------=================== */
+.step1padding {
+  padding: 5.5rem 4% 26px;
+}
+
+.step2padding {
+  padding: 12% 4% 2% 2%;
+}
+.step3padding {
+  padding: 5.5rem 4% 26px;
+}
+.step4padding {
+  padding: 12.5rem 4% 26px;
+}
+/*============----------media query end here----------=============*/
+
+.changeAlertAdmin {
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+#emoji {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  text-anchor: middle;
+  font-weight: 700;
+  user-select: none;
+  pointer-events: none;
+}
+
+.jconfirm-type-red {
+  border-top: solid 7px #ffc107;
+  width: 167%;
+  margin-left: -34% !important;
+}
+
+.footer-logo {
+  height: 20px;
+}
+
+.footer p {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+#footer {
+  border-top: 10px solid #f6c34c;
+  background: #63c1c5;
+  padding: 10px 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+header .logo {
+  text-align: center;
+}
+
+header.fixed-top.header-fixed .col {
+  padding: 0px;
+}
+
+.header-size {
+  height: 60px;
+  -webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease 0.05s;
+  -webkit-transition: all 0.5s ease 0.05s;
+  background: #63c1c5;
+}
+
+  .dbContent {
+    text-align: center;
+  }
+
+.company_profile.container {
+  margin: 100px auto 0px;
+}
+
+.footer.adminFooter.fixed-bottom.navbar-light.bg-faded {
+  position: absolute;
+  bottom: auto;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.btn-pink:hover,
+.btn-pink:focus,
+.btn-pink:active {
+  background-color: #e4287c;
+  color: #fff;
+  border-color: #e4287c;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-pink {
+  background-color: #63c1c5;
+  color: #fff;
+  border-color: #63c1c5;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-family: "Helvetica" !important;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  min-width: 140px;
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+div#videoheader {
+  font-size: 16pt;
+  color: #000;
+  font-family: "Helvetica";
+  background: #cedadc !important;
+  font-weight: bold;
+}
+div#interviewheader {
+  font-size: 16pt;
+  color: #000;
+  font-family: "Helvetica";
+  background: #cedadc !important;
+  font-weight: bold;
+  width: 62%;
+  text-align: center;
+}
+
+.form__radio-group {
+  padding: 1rem 1.5rem;
+  background-color: rgb(99, 193, 197);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  max-height: 7rem;
+}
+
+.form__radio-input {
+  visibility: hidden;
+  display: none;
+}
+
+.form__radio-label {
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0px 0 0 60px;
+}
+
+.form__radio-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  border: 4px solid #cedadc;
+  border-radius: 0%;
+  transition: opacity 0.2s;
+}
+
+.form__radio-button::after {
+  opacity: 1;
+  content: "✔";
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1;
+}
+.start.setup {
+  color: #000;
+  height: 100%;
+  background-size: cover;
+  padding: 4rem 8rem 0rem 8rem;
+}
+
+.interview__setup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.interview__text {
+  flex-basis: 50%;
+  flex-shrink: 0;
+  margin-right: 4rem;
+}
+
+.interview__text h1 {
+  margin-bottom: 0;
+}
+
+h1 {
+  color: #000;
+  line-height: 26pt;
+  font-size: 22pt;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.paragraph--small {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  font-weight: 400;
+  font-family: "Helvetica" !important;
+}
+
+.interview__image {
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.interview__image img {
+  width: 80%;
+}
+
+/* .interview__video {
+  flex-basis: 55%;
+  z-index: 99;
+} */
+
+#video-holder {
+  z-index: -1;
+  position: relative;
+}
+
+.video-cube {
+  border-top: 1rem solid #63c1c5;
+  border-left: 0.8rem solid #63c1c5;
+  border-right: 0.8rem solid #63c1c5;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  /* object-fit: fill; */
+  height: auto !important; 
+}
+/*
+@media only screen and (max-height: 800px) {
+  .video-cube {
+    border-top: 1rem solid #63c1c5;
+    border-left: 0.8rem solid #63c1c5;
+    border-right: 0.8rem solid #63c1c5;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    object-fit: fill;
+    height: auto !important; 
+  }
+  video {
+    width: 87% !important;
+  }
+  .practice_interview_btn {
+    width: 87% !important;
+}
+.interview-first__video--buttons{
+  width: 52% !important;
+  margin-left: -8%;
+  
+}
+}
+*/
+video {
+  width: 100%;
+  background: transparent  url(../../assets/img/LogoInterview.png) center center / cover no-repeat;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+.interview__video--buttons {
+  border-left: 0.2rem solid #63c1c5;
+  border-right: 0.2rem solid #63c1c5;
+  border-top: 1rem solid #63c1c5;
+  border-bottom: 0.2rem solid #63c1c5;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #ffffff;
+  margin-top: -1rem;
+  padding: 1rem;
+  z-index: 99;
+  min-height: 3.2rem;
+  text-align: center;
+  width: 87%;
+}
+
+.interview__video--buttons button {
+  outline: none;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.2s;
+  padding: 0.5rem 1rem;
+}
+
+.btn-icon {
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.btn-icon img {
+  outline: none;
+  width: 48px;
+  height: 48px;
+}
+
+.btn-icon:disabled {
+  background-color: grey;
+  color: white;
+}
+
+#play-timer {
+  color: black;
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+
+/* added for interview*/
+.interview__setup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 56.25em) {
+  .interview__setup {
+    flex-direction: column;
+  }
+}
+
+.interview__text {
+  flex-basis: 40%;
+  flex-shrink: 0;
+  margin-right: 4rem;
+}
+.interview__text h1 {
+  margin-bottom: 0;
+}
+@media (max-width: 56.25em) {
+  .interview__text {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.interview__image {
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.interview__image img {
+  width: 80%;
+}
+@media (max-width: 56.25em) {
+  .interview__image {
+    display: none;
+  }
+}
+
+/* .interview__video {
+  flex-basis: 55%;
+  z-index: 99;
+}
+@media (max-width: 56.25em) {
+  .interview__video {
+    width: 80%;
+  }
+} */
+.interview__video--buttons {
+  border-left: 0.2rem solid #3ec8ac;
+  border-right: 0.2rem solid #4e90a4;
+  border-top: 1rem solid #3ec8ac;
+  border-bottom: 0.2rem solid #4e90a4;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #ffffff;
+  margin-top: -1rem;
+  padding: 1rem;
+  z-index: 99;
+  min-height: 3.2rem;
+}
+.interview__video--buttons button {
+  outline: none;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.2s;
+  padding: 0.5rem 1rem;
+}
+.interview__video--buttons button:hover {
+  transform: translateY(-0.2rem);
+}
+.interview__video--buttons button:focus {
+  transform: translateY(0);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+.interview__video--buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+}
+
+.interview-first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.interview-first #video-holder {
+  z-index: 99;
+}
+.interview-first__text {
+  font-size: 4rem;
+}
+.interview-first__text h1 {
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.interview-first__timer {
+  color: #333;
+  font-size: 15pt;
+}
+@media (max-width: 56.25em) {
+  .interview-first__timer {
+    font-size: 1.4rem;
+    align-self: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+}
+.interview-first__video {
+  width: 60%;
+  z-index: 99;
+}
+
+/* .interview__video{
+  width: 60%;
+} */
+@media (max-width: 56.25em) {
+  .interview-first__video {
+    width: 95%;
+  }
+  .interview__video{
+    width: 95%;
+  }
+}
+.interview-first__video--buttons {
+  border-left: 0.2rem solid #3ec8ac;
+  border-right: 0.2rem solid #4e90a4;
+  border-top: 1rem solid #3ec8ac;
+  border-bottom: 0.2rem solid #4e90a4;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #ffffff;
+  margin-top: -1rem;
+  padding: 1rem;
+  z-index: 99;
+  min-height: 3.2rem;
+  width: 60%;
+  /* margin-left: -8%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 56.25em) {
+  .interview-first__video--buttons {
+    width: 95%;
+    /* margin-left: -12%; */
+  }
+}
+@media (max-width: 56.25em) {
+  .interview-first__video--buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.interview-first__video--buttons button {
+  outline: none;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.2s;
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 77.43em) {
+  .interview-first__video--buttons .btn {
+    padding-top: 0px;
+    line-height: 12px;
+  }
+  .interview-first__timer {
+    line-height: 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .interview-first__video--buttons .btn:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+.interview-goodbye {
+  display: -webkit-box;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  /* width: 50%; */
+  padding-top: 5rem;
+}
+.interview-goodbye__text {
+  flex: 1;
+  padding: 0 10%;
+}
+@media (max-width: 56.25em) {
+  .interview-goodbye__text {
+    padding: 0;
+  }
+}
+.interview-goodbye__text h1 {
+  /* font-size: 2rem; */
+}
+.interview-goodbye__text p {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+.interview-goodbye__img {
+  display: flex;
+  flex: 1;
+}
+
+/* #video-interview {
+  height: 500px !important;
+} */
+
+b#question {
+  font-size: 24pt;
+  line-height: 28pt;
+}
+
+@media (max-width: 56.25em) {
+  #video-interview {
+    height: 100% !important;
+  }
+  div#interviewheader {
+    widows: 95% !important;
+  }
+}
+/*============= we are sorry page(interviewDecline) start here ==================*/
+
+.interview-goodbye {
+  padding-top: 10%;
+
+}
+/*============= we are sorry page(interviewDecline) end here ==================*/
+
+
+
+
+
+/* S-Jaydip */
+.start.setup{
+  padding:4rem 8rem 8rem 8rem;
+  height: auto;
+}
+.interview__video{
+  flex-basis: 50%;
+  padding-top:20px;
+}
+.interview__setup{
+  max-width:1400px;
+  margin: 0 auto;;
+}
+.interview_screen .interview__video--buttons{
+  width:100%;
+}
+.interview_screen .interview__text{
+  padding-top:2rem;
+}
+.interview_screen .practice_interview_btn button{
+  margin: 5px 0;;
+}
+.interview_screen #play-timer{
+  font-size: 20px;
+}
+.interview_screen .interview__video--buttons button{
+  background: #3ec8ac;
+  cursor: pointer;
+}
+.interview_screen .interview__video--buttons .btn-icon:disabled{
+  opacity:0.25;
+  cursor: not-allowed;
+}
+#interview-first{
+  padding-top: 2rem;
+}
+#interview-first span.main_question{
+  padding-right:0;
+}
+.vcontainer{
+  max-width:1000px;
+  margin-left:auto;
+  margin-right: auto;
+  padding:0 15px;
+}
+.agree-for-interview{
+  text-align:right;
+}
+.agree-for-interview .form__radio-group{
+  margin:10px 0;
+  margin-right:15px;
+}
+.agree-for-interview button{
+  margin:10px 0;
+}
+:disabled{
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.video-cube-intial{
+  min-height: 500px;
+}
+.interview-goodbye__img img{
+  max-width:100%;
+}
+
+@media(max-width:991px){
+  .interview-goodbye__text p{
+    font-size:18px;
+  }
+  .interview-goodbye__text{
+    padding: 0;
+  }
+  .interview-goodbye__text h1{
+    font-size:23px;
+  }
+  .start.setup{
+    padding:4rem 4rem 8rem;
+  }
+}
+
+@media(max-width:768px){
+  .start.setup{
+    padding:3rem 0.5rem 8rem;
+  }
+  .interview_screen .interview__text{
+    order: 1;
+  }
+  .video-cube{
+    border-width: 0.25rem;
+    border-bottom-width: 0;
+  }
+  .interview__video--buttons, .interview-first__video--buttons{
+    border-top-width: 0.25rem;
+  }
+  .interview__video .btn-icon img{
+    width:38px;
+    height: 38px;
+  }
+  #interview-first span.main_question{
+    font-size:35px;
+  }
+  #interview-first b#question{
+    font-size: 20px;
+  }
+  .interview-first__video--buttons .btn{
+    padding-top:10px;
+  }
+  .agree-for-interview{
+    text-align:center;
+  }
+  .agree-for-interview .form__radio-group{
+    padding:1rem;
+  }
+  .agree-for-interview .form__radio-label{
+    font-size: 20px;
+    padding-left:40px;
+    margin-right:10px;
+  }
+  .agree-for-interview .form__radio-button{
+    width:1.5rem;
+    height:1.5rem;
+    border-width:3px;
+    top:2px;
+  }
+  .agree-for-interview .form__radio-button::after{
+    font-size: 20px;
+  }
+}

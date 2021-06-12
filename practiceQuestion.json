@@ -1,0 +1,16 @@
+{
+    "questions": [
+        {
+            "question": "Why should we hire you?",
+            "given_time": "03:00",
+            "order": "0",
+            "is_answered": "N"
+        },
+        {
+            "question": "Tell me about yourself",
+            "given_time": "03:00",
+            "order": "1",
+            "is_answered": "N"
+        }
+    ]
+}

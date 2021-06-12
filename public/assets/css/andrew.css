@@ -1,0 +1,115 @@
+/* VARIABLES */
+:root{
+    --btn-secondary: #28a745;
+}
+
+/* UTILITIES */
+.u-margin-center{
+    margin: 0 auto;
+}
+
+/* RESET */
+button{
+    outline: none;
+}
+
+/* BUTTON */
+
+.btn-green{
+    background-color: #63c1c5;
+    color: #fff;
+    transition: all .2s;
+}
+
+.btn-green:hover{
+    transform: translateY(-2px);
+    box-shadow: #63c1c5;
+}
+
+.btn-green:focus{
+    transform: translateY(0);
+    box-shadow: #63c1c5;
+}
+
+/* CARD */
+
+.messageCard{
+    position: relative;
+    padding: .5rem 0 .5rem 1.5rem;
+    border-left: 0.2rem solid lighten(#120bb0, 40%);
+    font-family: inherit;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    letter-spacing: 1.2px;
+    background-color: #F8F8F8;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all .4s;
+    margin-top: 1rem;
+}
+
+.messageCard:hover{
+    transform: translateX(4px);
+    cursor: pointer;
+}
+
+/* The code to make it works FOR TIME, but just editing, I'm writing this because it will take much-much less time */
+
+button.btn.btn-light {
+    padding: 8px 12px;
+    display: inline-block;
+    font-size: 10px;
+    box-shadow: 0px 0px 20px -6px;
+}
+
+.dropdownfont{
+    font-size: 15px!important;
+    font-family: 'Font Awesome 5 Free'!important;
+    font-weight: 600 !important; 
+}
+
+.btn-light::after{
+    content: "\f0d7";
+    /* font-weight: 600 !important; */
+}
+
+.combodate{
+    display: contents!important;
+}
+.bootstrap-select>select {
+    position: absolute!important;
+    bottom: 0;
+    display: block!important;
+    width: 80px!important;
+    height: 100%!important;
+    padding: 0!important;
+    opacity: 0!important;
+    border: none;
+}
+
+.bootstrap-select button{
+    min-width: 60px !important;
+}
+
+.combodate{
+    display: flex; 
+}
+
+@media screen and (max-width: 900px){
+    .combodate{
+        flex-direction: row;
+        align-items: center;
+    }
+}  
+
+.bootstrap-select .dropdown-menu{
+    min-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clickable{
+    color: blue;
+    text-decoration: underline;
+}

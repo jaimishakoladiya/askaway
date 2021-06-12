@@ -1,0 +1,64 @@
+<header class="fixed-top header-fixed header-size">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="logo">
+						<a class="home-link" href="/">
+							<img src="/public/assets/img/askaway-logo.png" alt="Askaway" style="height: 45px;">
+						</a>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item" id="interview-dashboard">
+								<a class="nav-link home-link" href="/interview-dashboard">Interview Dashboard</a>
+							</li>
+						</ul>
+						<ul class=" navbar-nav my-2 my-lg-0">
+							
+							<li class="nav-item" id="company-profile">
+								<a class="nav-link" href="/company-profile" id="profileName"></a>
+							</li>
+							<li class="nav-item" id="manager-view">
+								<a class="nav-link" href="/manager-view" id="viewName">Manager View</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="logoutbtn" href="javascript:void(0)"
+									onclick="logout()">Logout</a>
+							</li>
+							<li class="nav-item active">
+								<a class="nav-link" id="managerName"></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+<script>
+	$(document).ready(function () {
+		const type = localStorage.getItem('type');
+		const name = localStorage.getItem('name');
+		$('#managerName').html(name);
+		if (type === 'admin') {
+			$('#profileName').html('Company Profile');
+			$('#viewName').html('Admin View');
+		} else {
+
+			$('#profileName').html('Manager Profile');
+			$('#viewName').html('Manager View');
+		}
+
+	})
+	function logout() {
+		localStorage.clear();
+		sessionStorage.clear()
+		window.location.href = '/login';
+	}
+</script>

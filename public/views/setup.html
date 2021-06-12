@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+
+</head>
+
+<style>
+	.btn-icon:disabled {
+		background-color: grey;
+		color: white;
+	}
+
+	.interview__video--buttons {
+		text-align: center;
+	}
+</style>
+
+<body>
+	<div id="interview">
+		<div class="interview__setup interview_screen">
+			<div class="interview__text">
+				<h1 class="heading-primary">
+					Prepare Your Equipment
+				</h1>
+				<p class="paragraph--small">
+					<br />
+					When prompted, please let AskAway use your camera and microphone, and record a short video
+					clip.</br>
+					</br>
+					After recording the clip, play it back and verify the video and audio are working fine.
+				</p>
+
+				<button type="button" disabled id="camera_test_success" class="btn btn-pink btn-small"
+					style="margin: 1rem 0; padding: 10px 20px;">
+					Start Interview
+				</button>
+
+				<div class="interview__image">
+					<img src="/public/assets/img/preview-chat-boss.png" alt="our Priview Boss nice flat image :)">
+				</div>
+			</div>
+			<div class="interview__video">
+				<div id="video-holder">
+					<video autoplay class="video-cube video-cube-intial" type="video/mp4" style="height: auto"></video>
+				</div>
+				<div class="interview__video--buttons practice_interview_btn">
+					<button id="btn-start-recording" class="btn-icon">
+						<img src="/public/assets/img/icons/recording.svg" alt="Start Recording">
+					</button>
+					<button id="btn-again-record-video" style="display: none;" disabled class="btn-icon">
+						<img src="/public/assets/img/icons/recording.svg" alt="Rerecord Video">
+					</button>
+					<button id="btn-stop-recording" disabled class="btn-icon">
+						<img src="/public/assets/img/icons/stop.svg" alt="Stop Recording">
+					</button>
+					<button id="btn-play-video" disabled class="btn-icon">
+						<img src="/public/assets/img/icons/play.svg" alt="Play Video">
+					</button>
+					<span id="play-timer"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js'></script>
+	<script src="/public/assets/js/adapter-latest.min.js"></script>
+</body>
+<script>
+	var btnStartRecording = document.querySelector('#btn-start-recording');
+	var btnStopRecording = document.querySelector('#btn-stop-recording');
+	var videoElement = document.querySelector('video');
+	var playTimer = document.getElementById('play-timer');
+	var mediaElemet;
+	var recorder;
+	var timerId;
+	var timeLeft = 30;
+
+	function postFiles() {
+		$('#btn-again-record-video').show();
+		$('#btn-start-recording').hide();
+		$('#btn-stop-recording').attr('disabled', true);
+		$('#camera_test_success').attr('disabled', false);
+		var blob = recorder.getBlob();
+		var fileName = generateRandomString() + `.webm`
+
+		var file = new File([blob], fileName, { type: 'video/webm' });
+
+		xhr('/videoUpload/configure', file, function (responseText) {
+			const finalURL = JSON.parse(responseText).finalLink;
+			$('#btn-stop-recording').attr('disabled', true);
+
+			$('#btn-play-video').attr('disabled', false);
+
+			$('video').remove();
+			$('#btn-again-record-video').attr('disabled', false);
+
+			playTimer.innerHTML = '';
+			const video = $('<video />', {
+				id: 'video',
+				src: finalURL,
+				type: 'video/mp4',
+				controls: false,
+				class: 'video-cube',
+			});
+			video.appendTo($('#video-holder'));
+			videoElement = $('video');
+		})
+		if (mediaElemet) {
+			mediaElemet.stop()
+		}
+	}
+
+	function xhr(url, data, callback) {
+		let request = new XMLHttpRequest();
+		request.onreadystatechange = function () {
+			if (request.readyState === 4 && request.status === 200) {
+				callback(request.responseText)
+			}
+		}
+		request.open('POST', url);
+
+		var formData = new FormData();
+		formData.append('file', data);
+		request.send(formData);
+	}
+
+
+	function captureUserMedia(success_callback) {
+		var session = {
+			audio: true,
+			video: true,
+		};
+		navigator.getUserMedia(session, success_callback, function (error) {
+			$.notify('Unable to capture your camera. Please check console logs.');
+		});
+	}
+
+	btnStartRecording.onclick = function () {
+
+		$('video').remove();
+		$('#video-holder').html('<video style="height: auto" id="videoElement" autoplay class="video-cube video-cube-intial" type="video/mp4"></video>');
+		videoElement = $('video').get(0);
+		captureUserMedia((stream) => {
+			mediaElemet = stream;
+			videoElement.srcObject = stream;
+			videoElement.muted = true;
+			recorder = RecordRTC(stream);
+			recorder.setRecordingDuration(30000).onRecordingStopped(postFiles);
+			recorder.startRecording();
+			timerId = setInterval(countdown, 1000);
+			$('#btn-stop-recording').attr('disabled', false);
+			$('#btn-start-recording').attr('disabled', true);
+		})
+	}
+	btnStopRecording.onclick = function () {
+		if (mediaElemet.active) { 
+			mediaElemet.stop();
+			recorder.stopRecording(postFiles);
+			timeLeft = -1;
+			playTimer.innerHTML = '';
+		} else{
+			$('#btn-stop-recording').attr('disabled', true);
+			$('#btn-again-record-video').attr('disabled', false);
+			$('#btn-play-video').attr('disabled', false);
+			$('#camera_test_success').attr('disabled', false);
+			videoElement.get(0).pause();
+			videoElement.currentTime = 0;
+		}
+	}
+	$(document).ready(() => {
+		$('#camera_test_success').click(function () {
+			$('#interview').empty();
+			$('#interview').load('/public/views/interview.html');
+		});
+		$('#btn-play-video').click(function () {
+			videoElement.get(0).play();
+			$('#camera_test_success').attr('disabled', true);
+			$('#btn-play-video').attr('disabled', true);
+			$('#btn-stop-recording').attr('disabled', false);
+			$('#btn-again-record-video').attr('disabled', true);
+			videoElement.get(0).addEventListener('ended', function () {
+				$('#btn-stop-recording').attr('disabled', true);
+				$('#btn-again-record-video').attr('disabled', false);
+				$('#btn-play-video').attr('disabled', false);
+				$('#camera_test_success').attr('disabled', false);
+			})
+		});
+		$('#btn-again-record-video').click(function () {
+			btnStartRecording = document.querySelector('#btn-start-recording');
+			btnStopRecording = document.querySelector('#btn-stop-recording');
+			videoElement = document.querySelector('video');
+			$('#btn-stop-recording').attr('disabled', true);
+			$('#btn-play-video').attr('disabled', true);
+			$('#btn-again-record-video').attr('disabled', true);
+			$('#camera_test_success').attr('disabled', true);
+
+			timeLeft = 30;
+			$('#btn-start-recording').trigger('click');
+		});
+	})
+	function countdown() {
+		if (timeLeft === -1) {
+			clearInterval(timerId);
+			$('#video-holder').html('<video id="videoElement" class="video-cube video-cube-intial" style="height:auto; background: transparent url(/public/assets/img/Processing_Video.png) center center / cover no-repeat;" type="video/mp4"></video>');
+		} else {
+			playTimer.innerHTML = timeLeft + ` seconds left`
+			if (timeLeft <= 10) {
+				playTimer.style.color = "red"
+			} else {
+				playTimer.style.color = "black"
+			}
+			timeLeft--;
+		}
+	}
+
+	function generateRandomString() {
+		if (window.crypto) {
+			var a = window.crypto.getRandomValues(new Uint32Array(3));
+			var token = '';
+			for (var i = 0, l = a.length; i < l; i++) token += a[i].toString(36);
+			return token;
+		} else {
+			return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+		}
+	}
+</script>
+
+</html>
+
+
+
+
+
+

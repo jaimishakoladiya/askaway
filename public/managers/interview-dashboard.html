@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AskAway - Interview Dashboard</title>
+    <meta name="description" content="A BETTER INTERVIEW" />
+    <link rel="shortcut icon" href="/public/assets/img/Favicon.png" type="image/x-icon">
+
+    <link href="/public/managers/assets/company-profile/content/css/bootstrap.css" rel="Stylesheet" type="text/css" />
+    <link href="/public/managers/assets/company-profile/content/css/animation.css" rel="Stylesheet" type="text/css" />
+    <link href="/public/managers/assets/company-profile/content/css/customeStyle.css" rel="Stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="/public/assets/css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <style>
+        .card {
+            box-shadow: 0px 0px 0px 0px #1b1b1b;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"> </div>
+    <section class="dbContent">
+        <div class="container divPosition company_profile">
+            <div class="row">
+                <div class="col">
+                    <div id="accordion" class="accordion" style="margin-bottom: 15px;">
+                        <div class="card-header">
+                            <a class="card-title">
+                                <h1 class="float-left title-font" id="title-Name">Department <span
+                                        id="departmentCount"></span> </h1>
+                            </a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="collapseOne" class="collapse show">
+                            <div id="company-information" class="card-wrap"
+                                style="margin-bottom:15px; padding: 20px 30px 20px">
+                                <div class="section-company-div">
+                                    <div id="departmentChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordionJob" class="accordion">
+                        <div class="card-header">
+                            <a class="card-title">
+                                <h1 class="float-left title-font" id="title-Name">Job <span id="jobDetailCount"></span>
+                                </h1>
+                            </a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="collapseJob" class="collapse show">
+                            <div id="company-information" class="card-wrap" style="padding: 20px 30px 20px">
+                                <div class="section-company-div">
+                                    <div id="jobChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+    <script src="/public/assets/js/jquery.min.js"></script>
+    <script src="/public/assets/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/public/assets/js/utility.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let managerToken = localStorage.getItem('m_token');
+            let adminKey = localStorage.getItem('adminKey');
+            if (!adminKey && !managerToken) {
+                window.location.href = '/login';
+            }
+            $('#header').load('/public/views/header.html')
+            $('#footer').load('/public/views/footer.html')
+            bindchart()
+        })
+
+        function bindchart() {
+            $.ajax({
+                url: `/getChart`,
+                type: "GET",
+                headers: setAuthenticationHeader(),
+                success: function (data) {
+                    if (data.status) {
+                        const departmentLabel = data.objDepartment.status;
+                        const departmentSeriesData = data.objDepartment.seriesData;
+                        $('#departmentCount').html("(" + departmentLabel.length + ")");
+                        setChart(departmentSeriesData, departmentLabel, 'departmentChart');
+
+                        const jobLabel = data.objJobDetailData.status;
+                        const jobSeriesData = data.objJobDetailData.seriesData;
+                        $('#JobDetailCount').html("(" + jobLabel.length + ")");
+                        setChart(jobSeriesData, jobLabel, 'jobChart')
+                    }
+                }
+            })
+        }
+        function setChart(seriesData, labels, divId) {
+            Highcharts.chart(divId, {
+                chart: { type: 'column' },
+                title: { text: '' },
+                xAxis: { categories: labels },
+                yAxis: {
+                    min: 0,
+                    title: { text: '' }
+                },
+                legend: {
+                    align: 'right',
+                    x: -30,
+                    verticalAlign: 'top',
+                    y: 25,
+                    floating: true,
+                    borderColor: '#CCC',
+                    borderWidth: 1,
+                    shadow: false
+                },
+                tooltip: {
+                    headerFormat: '<b>{point.x}</b><br/>',
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                    shared: true
+                },
+                plotOptions: {
+                    column: { stacking: 'normal' },
+                    series: { pointWidth: 40 }
+                },
+                series: seriesData
+            });
+            $('.highcharts-credits').hide();
+        }
+
+
+    </script>

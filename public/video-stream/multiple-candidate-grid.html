@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>AskAway - Multiple Candidate Grid</title>
+    <meta name="description" content="A BETTER INTERVIEW" />
+    <link rel="shortcut icon" href="/public/assets/img/Favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
+ 
+    <link rel="Stylesheet" href="/public/managers/content/css/customeStyle.css" />
+    <link rel="stylesheet" href="/public/assets/plugin/rateyo/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <script src="/public/assets/js/jquery.min.js"></script>
+    <script src="/public/assets/js/bootstrap.min.js"></script>
+    <script src="/public/assets/js/notify.min.js"></script>
+    <script src="/public/assets/plugin/rateyo/jquery.rateyo.min.js"></script>
+
+    <title>Askaway - Interview</title>
+    <style>
+        table .img-candidate {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="header"></div>
+        <section class="dbContent">
+            <div class="container divPosition company_profile">
+                <div class="row">
+                    <div class="col">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" style="width: 100%; border-bottom: 0px;">
+                                    <div style="width: 70%; float: left;">
+                                        <a class="card-title">
+                                            <h1 class="float-left title-font caps" id="title-text"
+                                                style="width: 100%; text-align: right;padding-right: 10%;"></h1>
+                                        </a>
+                                    </div>
+                                    <div style="width: 30%; float: right; text-align: right;">
+                                        <button class="btn btn-pink" type="button" id="shareGridButton"
+                                            style="display:none; padding: 0; border-radius: 5px; letter-spacing: 1.2px;">SHARE
+                                            GRID </button>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <div class="table-responsive">
+                                        <table class="table  paymentTable" id="candidate-grid-table">
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="footer"></div>
+    </div>
+    <div class="modal" id="shareGridModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header primaryHeader company_profile">
+                    <h1 class="modal-title" id="departmentQuestionTitle">
+                        Share Grid
+                    </h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="grid-share-error"></div>
+                    <div class="form-group newStyle">
+                        <label for="example-text-input" class="col-form-label">First Name</label>
+                        <input class="formInputs form-control" type="text" placeholder="First Name"
+                            id="txtShareFirstName">
+                    </div>
+                    <div class="form-group newStyle">
+                        <label for="example-text-input" class="col-form-label">Last Name</label>
+                        <input class="formInputs form-control" type="text" placeholder="Last Name"
+                            id="txtShareLastName">
+                    </div>
+                    <div class="form-group newStyle">
+                        <label for="example-text-input" class="col-form-label">Email</label>
+                        <input class="formInputs form-control" type="text" placeholder="Email" id="txtShareEmail">
+                    </div>
+                    <div class="form-group newStyle">
+                        <button class="btn btn-pink" id="share-grid-submit-button"> Share </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header primaryHeader company_profile">
+                    <h1 class="modal-title" id="question-display" style="text-align: center;">
+                    </h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video id="candidate-video" class="embed-responsive-item" autoplay=""
+                            controlslist="nodownload noremoteplayback"></video>
+                        <canvas id="overlay" style="display: none"> </canvas>
+                    </div>
+                    <div id="facesContainer" style="display: none"></div>
+                    <form method="POST">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 allFeedbcak">
+                                    <h3 class="title-font">Please rate this interview</h3>
+                                    <div class="select-rating" style="margin-bottom: 10px;">
+                                        <label style="float: left">Rating
+                                            <span class="hdnRating" style="display: none;"></span>
+                                        </label>
+                                        <div class="rating-candidate" style="display: inline-block;">
+                                        </div>
+                                    </div>
+                                    <textarea id="reviewNote" name="reviewNote" placeholder="Please add a review"
+                                        rows="3" style="width: 100%;"></textarea>
+                                    <button class="btn btn-pink" id="sbtIndividual" type="button"
+                                        style="margin-top: 10px;">Submit</button>
+                                    <hr />
+                                    <div id="replaceForOtherReviews">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/assets/js/login.js"></script>
+</body>
+<script>
+    $(document).ready(() => {
+        var url = window.location.href;
+        if (url.includes('shared-multiple-grid')) {
+            const sharedId = window.location.href.split('/')[4];
+            const type = "multiple";
+
+            localStorage.setItem('sharedId', sharedId);
+
+            $.post(`/check-grid-assign/${sharedId}/${type}`, function (data) {
+                if (data.status) {
+                    $('#header').load('/public/views/shared-header.html');
+                    $('#footer').load('/public/views/footer.html');
+                    getVideoData();
+                    $('body').show();
+                } else {
+                    $.notify(data.message);
+                    window.location.href = '/';
+                }
+            });
+        } else {
+            $('#shareGridButton').show();
+            const managerToken = localStorage.getItem('m_token');
+            const type = localStorage.getItem('type');
+            const adminKey = localStorage.getItem('adminKey');
+            if (!managerToken && type === 'manager') {
+                window.location.href = '/login';
+            } else if (!adminKey && type === 'admin') {
+                window.location.href = '/login';
+            } else {
+                $('#header').load('../public/views/header.html');
+                $('#footer').load('../public/views/footer.html');
+                getVideoData();
+                $('body').show();
+                const name = localStorage.getItem('name');
+                $('#managerName').html(name);
+            }
+        }
+
+        function validateEmail(email) {
+            const re = /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        $('#shareGridButton').click(function () {
+            $('#shareGridModal').modal('show');
+        });
+        $('#share-grid-input').on('keypress', function (e) {
+            if (e.keyCode === 13) {
+                $('#share-grid-submit-button').click();
+            }
+        });
+        $('#share-grid-submit-button').click(function () {
+            if (!$('#txtShareFirstName').val() && !$('#txtShareLastName').val() && !$('#txtShareEmail').val()) {
+                $.notify('Please enter all data');
+                return;
+            } else {
+                if (!validateEmail($('#txtShareEmail').val())) {
+                    $.notify('Enter valid email');
+                    return;
+                }
+            }
+
+            const shareData = {
+                'fromManagerToken': localStorage.getItem('m_token'),
+                'candidateToken': url.includes('multiple-candidate') ? '' : window.location.href.split('/')[4],
+                'jobName': url.includes('multiple-candidate') ? window.location.href.split('/')[4] : '',
+                'firstName': $('#txtShareFirstName').val(),
+                'lastName': $('#txtShareLastName').val(),
+                'email': $('#txtShareEmail').val(),
+                'type': url.includes('multiple-candidate') ? 'multiple' : 'single',
+            };
+
+            
+
+            $.ajax({
+                type: 'POST',
+                url: '/manager/share',
+                data: JSON.stringify(shareData),
+                contentType: 'application/json',
+                headers: setAuthenticationHeader(),
+                success: function (result) {
+                    if (result.status) {
+                        $('#shareGridModal').modal('hide');
+                        $.notify(result.message, 'success');
+                    } else {
+                        $.notify(result.message);
+                    }
+                },
+            });
+        });
+
+
+
+        openModal = function (id, video_url, question, candidateToken) {
+            sessionStorage.setItem('candidate_id_candidate_grid', candidateToken);
+            sessionStorage.setItem('question_number', id);
+            videoElement = document.querySelector('video');
+            $('#question-display').text(question.replace('@', "'")).show();
+            $('#exampleModal').modal('show');
+            if (video_url) { videoElement.src = ''; }
+            videoElement.src = video_url;
+            videoElement.play();
+            videoElement.muted = false;
+            videoElement.controls = true;
+            $('video').attr('data-id', candidateToken);
+            const url = window.location.href;
+
+            const getImage = $(`#img-${candidateToken}`).attr('src');
+
+
+            loadComments(id, candidateToken, video_url);
+
+        }
+        loadComments = (id, candidateToken, video_url) => {
+            $('div#replaceForOtherReviews').empty();
+            $('.rating-candidate').rateYo({
+                ratedFill: '#f6c34c',
+                starWidth: '20px',
+                numStars: 5,
+                halfStar: true,
+                onSet: function (rating) {
+                    localStorage.setItem('rating', rating);
+                },
+            });
+
+            $.get(`/interview/${candidateToken}/reviews/${video_url}`, function (data) {
+                if (data.status) {
+                    var reviews = data.data;
+                    var html = '';
+                    for (var index = 0; index < reviews.length; index++) {
+                        if (index !== reviews.length - 1) {
+                            html += "<div class='feedback'>";
+                        } else {
+                            html += "<div class='feedback'>";
+                        }
+
+                        html += '<div class="review-div">';
+                        html += "<div class='review-block-title' style='float: left; margin-right: 10px;'>";
+                        html += '<h1 class="title-font">' + reviews[index].name + '</h1>';
+                        html += '</div>';
+                        html += "<div class='rating user'>";
+                        html += "<div style='padding: 0; margin-top:2px;' class='hiring-manager-review' data-rateyo-rating='" + reviews[index].rating + "'></div>";
+                        html += '</div>';
+                        html += '</div>';
+                        html += "<div class='clearfix'></div>";
+                        html += "<div class='review-block-description'>";
+                        html += '<p>- ' + reviews[index].review + '</p>';
+                        html += '</div>';
+                        html += '</div>';
+                    }
+                    $('div#replaceForOtherReviews').append(html);
+                    $('.hiring-manager-review').rateYo({ numStars: 5, readOnly: true, starWidth: '20px', ratedFill: '#f6c34c' });
+                }
+            });
+        };
+
+        var url = window.location.href;
+
+        $('#exampleModal').on('hidden.bs.modal', function () {
+            videoElement.pause();
+            $('#question-display').text('').hide();
+        });
+        var individualRating = {};
+
+
+        $('button#sbtIndividual').click(function () {
+            var candidateToken = window.location.href.split('/')[4];
+            var managerToken = localStorage.getItem('m_token');
+            var name = localStorage.getItem('name');
+
+            if (url.includes('shared-single-grid') || url.includes('shared-multiple-grid')) {
+                managerToken = localStorage.getItem('sharedId');
+                candidateToken = sessionStorage.getItem('candidate_id_candidate_grid');
+                name = sessionStorage.getItem('name');
+            }
+
+            if (url.includes('multiple-candidate')) {
+                candidateToken = sessionStorage.getItem('candidate_id_candidate_grid');
+                name = localStorage.getItem('name');
+            }
+
+            videoElement.pause();
+            individualRating.review = $('#reviewNote').val();
+
+            individualRating.rating = localStorage.getItem('rating');
+
+            individualRating.managerToken = managerToken;
+            individualRating.videoPath = $('video').attr('src');
+            individualRating.questionNumber = `${sessionStorage.getItem('question_number')}`;
+            individualRating.candidateToken = `${candidateToken}`;
+            individualRating.name = name;
+            const tempPath = $('video').attr('src');
+            $(`img[vidsrc='${tempPath}']`).next().html(individualRating.rating || 0);
+
+            $('#exampleModal').modal('hide');
+            $('#reviewNote').val('');
+            $('.rating-candidate').rateYo('destroy');
+            $('#question-display').text('').hide();
+            if (individualRating.rating != null && individualRating.review != null) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/post-video-review',
+                    "contentType": "application/json",
+                    "data": JSON.stringify(individualRating),
+                    success: function (data) {
+
+                        if (data.status) {
+                            $.notify(data.message, 'success');
+                        } else {
+                            $.notify(data.message, { type: 'danger' });
+                        }
+                        getVideoData();
+                    },
+                    fail: function (err1) {
+                        $.notify('OOps!');
+                    },
+                });
+            }
+        });
+    })
+
+    function getVideoData() {
+        const Url = document.location.href.split('/');
+        const jobName = Url[4];
+        let token = localStorage.getItem('m_token');
+        const type = localStorage.getItem('type');
+        if (Url.includes('shared-multiple-grid')) {
+            token = Url[4];
+        } else {
+            if (type === 'admin') { token = localStorage.getItem('adminKey'); }
+            $('#title-text').text(jobName.replace(/_/g, ' '));
+        }
+        $('#candidate-grid-table').html('');
+        const isShared = Url.includes('shared-multiple-grid');
+        $.ajax({
+            type: 'GET',
+            url: `/multiple-candidate/${token}/${jobName}/${isShared}/${type}`,
+            success: function (result) {
+                if (result.success) {
+                    const candidates = sortArray(result.data.candidate, 'finalRating', -1);
+                    const questionGrid = result.data.questionGrid;
+                    if (Url.includes('shared-multiple-grid')) {
+                        $('#title-text').text(result.data.jobName.replace(/_/g, ' '));
+                        sessionStorage.setItem('name', result.data.name);
+                        $('#managerName').html(result.data.name);
+                    }
+                    const isArchive = sessionStorage.getItem('isArchive') ? sessionStorage.getItem('isArchive') : false;
+                    let html = '';
+                    html += "<thead class='blueBg'>";
+                    html += '<tr>'
+                    html += "<th style='font-size: 14pt; line-height: 12pt'>Question</th>";
+                    for (let index = 0; index < candidates.length; index++) {
+                        const candidate = candidates[index];
+                        if ((isArchive === 'true')) {
+
+                            if (!isArchive === candidate.isArchive) {
+                                sessionStorage.setItem('candidate_id_candidate_grid', candidate.token);
+                                html += "<th style='text-transform: capitalize; text-align:center;'>" + candidate.first_name + ' ' + candidate.last_name + '</th>';
+                            }
+
+                        } else {
+                            sessionStorage.setItem('candidate_id_candidate_grid', candidate.token);
+                            html += "<th style='text-transform: capitalize; text-align:center;'>" + candidate.first_name + ' ' + candidate.last_name + '</th>';
+                        }
+                    }
+                    html += '</tr>'
+                    html += '</thead>';
+                    html += '<tbody>';
+                    html += '<tr>'
+                    html += '<td></td>';
+
+                    for (let index = 0; index < candidates.length; index++) {
+                        const img = candidates[index].profileImage ? candidates[index].profileImage : '/public/assets/img/little_monster.png';
+                        if ((isArchive === 'true')) {
+                            if (!isArchive === candidates[index].isArchive) {
+                                html += `<td style="text-align: center;"><img class='img-candidate' id='img-${candidates[index].token}' src='${img}'></td>`;
+                            }
+                        } else {
+                            html += `<td style="text-align: center;"><img class='img-candidate' id='img-${candidates[index].token}' src='${img}'></td>`;
+                        }
+                    }
+
+                    html += '</tr>'
+
+                    for (let questionIndex = 0; questionIndex < questionGrid.length; questionIndex++) {
+                        const question = questionGrid[questionIndex];
+                        html += '<tr>';
+                        html += '<td>' + question.question + '</td>';
+
+                        const questionCandidate = sortArray(question.candidate, 'finalRating', -1);
+
+
+                        for (let candidateIndex = 0; candidateIndex < questionCandidate.length; candidateIndex++) {
+                            const candidate = questionCandidate[candidateIndex];
+                            if ((isArchive === 'true')) {
+                                if (!isArchive === candidate.isArchive) {
+                                    html += '<td>';
+                                    if (candidate.path) {
+                                        html += "<img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' vidSrc=" + candidate.path + " onclick='openModal(\"" + (questionIndex + 1) + '", "' + candidate.path + '", "' + question.question.replace("'", '@') + '", "' + candidate.id + "\")'/>";
+                                    } else {
+                                        // if (candidate.status === 'Completed' || candidate.status === 'Started') {
+                                        html += "<img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' style='visibility: hidden;'>";
+                                        // }
+                                    }
+                                    html += "<img src='/public/assets/img/ratingColor.png' class='img-fluid'> " + parseFloat(candidate.rating).toFixed(2) || 0.00 + '</td>';
+                                }
+                            } else {
+                                html += '<td>';
+                                if (candidate.path) {
+                                    html += "<img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' vidSrc=" + candidate.path + " onclick='openModal(\"" + (questionIndex + 1) + '", "' + candidate.path + '", "' + question.question.replace("'", '@') + '", "' + candidate.id + "\")'/>";
+                                } else {
+                                    // if (candidate.status === 'Completed' || candidate.status === 'Started') {
+                                    html += "<img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' style='visibility: hidden;'>";
+                                    // }
+                                }
+                                html += "<img src='/public/assets/img/ratingColor.png' class='img-fluid'> " + parseFloat(candidate.rating).toFixed(2) || 0.00 + '</td>';
+                            }
+                        }
+                        html += '</tr>';
+                    }
+
+                    html += '<tr>'
+                    html += "<td><div style='word-wrap: break-word; font-weight: bold; text-align: left;width: 300px;'>Score</div></td>";
+
+                    for (let index = 0; index < candidates.length; index++) {
+                        const candidate = candidates[index];
+                        if ((isArchive === 'true')) {
+                            if (!isArchive === candidate.isArchive) {
+                                if (candidate.status === 'Completed' || candidate.status === 'Started') {
+                                    html += "<td><img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' style='visibility: hidden;'></span><img src='/public/assets/img/ratingColor.png' class='img-fluid'> " + parseFloat(candidate.finalRating).toFixed(2) + '</td>';
+                                } else {
+                                    html += "<td><img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' style='visibility: hidden;'><img src='/public/assets/img/ratingColor.png' class='img-fluid'> " + parseFloat(candidate.finalRating).toFixed(2) || 0.00 + '</td>';
+                                }
+                            }
+                        } else {
+                            if (candidate.status === 'Completed' || candidate.status === 'Started') {
+                                html += "<td><img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' style='visibility: hidden;'></span><img src='/public/assets/img/ratingColor.png' class='img-fluid'> " + parseFloat(candidate.finalRating).toFixed(2) + '</td>';
+                            } else {
+                                html += "<td><img src='/public/assets/img/videoPlay.png' class='img-fluid pntr' style='visibility: hidden;'><img src='/public/assets/img/ratingColor.png' class='img-fluid'> " + parseFloat(candidate.finalRating).toFixed(2) || 0.00 + '</td>';
+                            }
+                        }
+                    }
+
+                    html += '</tr>'
+                    html += '</tbody>';
+                    $('#candidate-grid-table').append(html);
+                } else {
+                    $.notify(result.message);
+                }
+            },
+        });
+    }
+
+    function sortArray(array, property, direction) {
+        direction = direction || 1;
+        array.sort(function compare(a, b) {
+            let comparison = 0;
+            if (a[property] > b[property]) {
+                comparison = 1 * direction;
+            } else if (a[property] < b[property]) {
+                comparison = -1 * direction;
+            }
+            return comparison;
+        });
+        return array;
+    }
+
+</script>
+
+</html>

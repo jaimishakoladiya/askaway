@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>AskAway - Decline Interview</title>
+    <meta name="description" content="A BETTER INTERVIEW" />
+    <link rel="shortcut icon" href="/public/assets/img/Favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/public/latest/css/style.css"> -->
+    <link rel="stylesheet" href="/public/admin/css/style.css">
+
+</head>
+
+<body>
+    <header class="fixed-top header-fixed header-size">
+        <div class="logo" style="text-align: left; margin: 10px 0 0 0; padding-left: 8rem">
+            <a class="home-link" href="/">
+                <img src="/public/assets/img/askaway-logo.png" alt="Askaway" style="height: 45px;">
+            </a>
+        </div>
+    </header>
+    <div>
+        <div class="interview-goodbye">
+            <div class="interview-goodbye__text" style="width: 45em;">
+				<h1>We Are Sorry Now</h1>
+				<p style="margin-top: 2em;">
+				We are sorry but at this time we are not able to process on your request Please Contact to Administartor
+				</p>
+			</div>
+            <div class="interview-goodbye__img" id="content">
+                <img src="/public/assets/img/jobTitle.png" alt="CONGRATULATIONS!!!!!!">
+            </div>
+        </div>
+        <div>
+            <button id='btn' style="margin-right: 11%;float: right;margin-top: 2%;" class="btn btn-pink"
+                onclick="gotointerview()"> Go to Home </button>
+        </div>
+    </div>
+    <div id="footer" style="position: fixed;"></div>
+</body>
+<script src="/public/assets/js/jquery.min.js"></script>
+<script>
+   
+    function gotointerview() {
+        var token = location.href.split('start/')[1];
+        const tokenval = token.split('/')[0];
+        window.location.href = `/`
+    }
+		$(document).ready(function () {
+			$('#footer').load('/public/views/footer.html');
+		});
+</script>
+
+</html>

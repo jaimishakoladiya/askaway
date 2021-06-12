@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <header class="fixed-top header-fixed header-size">
+        <div class="logo" style="text-align: left; margin: 10px 0 0 0; padding-left: 8rem">
+            <a class="home-link" href="/">
+                <img src="/public/assets/img/askaway-logo.png" alt="Askaway" style="height: 45px;">
+            </a>
+        </div>
+    </header>
+    <div>
+        <div class="interview-goodbye row">
+            <div class="col-md-6">
+                <div class="interview-goodbye__text">
+                    <h1>Sorry</h1>
+                    <p style="margin-top: 2em;">
+                        This interview has been started twice. Please contact the hiring manager (<span
+                            id="managerEmailId"></span>) to schedule another
+                        one.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="interview-goodbye__img" id="content">
+                    <img src="/public/assets/img/jobTitle.png" alt="CONGRATULATIONS!!!!!!">
+                </div>
+            </div>
+            <div class="col-md-6 offset-md-6 mt-4 text-center">
+                <a href="/" class="btn btn-pink" style="margin-right: 11%;float: right;margin-top: 2%;">Go
+                    To Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var token = sessionStorage.getItem('key') || '';
+    $(document).ready(function () {
+        $.get('/getManagerDataByInterviewid/' + token, function (data, status) {
+            if (data.status) {
+                $('#managerEmailId').html(data.data.email);
+            }
+        })
+    })
+</script>
+
+</html>
